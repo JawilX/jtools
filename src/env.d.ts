@@ -14,3 +14,7 @@ declare interface ImportMetaEnv {
 declare interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+
+declare interface Window {
+  $message: import('naive-ui/lib/message/src/MessageProvider').MessageApiInjection
+}

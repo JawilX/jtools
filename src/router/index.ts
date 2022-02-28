@@ -11,6 +11,15 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/Home.vue'),
   },
+  {
+    path: '/base64',
+    name: 'base64',
+    meta: {
+      title: 'Base64编码',
+      icon: '',
+    },
+    component: () => import('@/views/Base64.vue'),
+  },
 ]
 
 const router = createRouter({
@@ -19,7 +28,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  console.log('全局路由前置守卫：to,from\n', to, from)
+  console.log(`全局路由前置守卫：to: ${to.fullPath}, from: ${from.fullPath}`)
   document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
   if (!NProgress.isStarted()) {
     NProgress.start()
@@ -27,7 +36,7 @@ router.beforeEach((to, from) => {
 })
 
 router.afterEach((to, from) => {
-  console.log('全局路由后置守卫：to,from\n', to, from)
+  console.log(`全局路由后置守卫：to: ${to.fullPath}, from: ${from.fullPath}`)
   NProgress.done()
 })
 
