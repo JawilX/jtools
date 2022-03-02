@@ -20,6 +20,15 @@ const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/Base64.vue'),
   },
+  {
+    path: '/fibonacci',
+    name: 'fibonacci',
+    meta: {
+      title: '斐波那契数',
+      icon: '',
+    },
+    component: () => import('@/views/Fibonacci.vue'),
+  },
 ]
 
 const router = createRouter({
