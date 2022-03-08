@@ -1,8 +1,6 @@
 <script setup lang="ts">
-const tools = [
-  { path: '/base64', name: 'Base64编码' },
-  { path: '/fibonacci', name: '斐波那契数' },
-]
+import { routes } from '@/router/index'
+const tools = routes.filter(item => !item.meta?.hide)
 </script>
 
 <template>
@@ -13,7 +11,7 @@ const tools = [
       :to="item.path"
       class="flex h-16 items-center rounded border border-gray-200 border-solid bg-gray-50 p-3 text-lg"
     >
-      {{ item.name }}
+      {{ item.meta?.title }}
     </router-link>
   </div>
 </template>

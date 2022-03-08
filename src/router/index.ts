@@ -1,13 +1,14 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
     meta: {
       title: 'JTools',
       icon: '',
+      hide: true,
     },
     component: () => import('@/views/Home.vue'),
   },
@@ -28,6 +29,15 @@ const routes: Array<RouteRecordRaw> = [
       icon: '',
     },
     component: () => import('@/views/Fibonacci.vue'),
+  },
+  {
+    path: '/hexConvert',
+    name: 'hexConvert',
+    meta: {
+      title: '进制转换',
+      icon: '',
+    },
+    component: () => import('@/views/HexConvert.vue'),
   },
 ]
 

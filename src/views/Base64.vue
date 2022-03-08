@@ -50,8 +50,8 @@ function clear() {
         placeholder="请输入需要转码的字符串"
       />
       <NSpace class="py-2" justify="center">
-        <NButton strong secondary type="info" @click="encode = window.btoa(source)">编码</NButton>
-        <NButton strong secondary type="info" @click="source = window.atob(encode)">解码</NButton>
+        <NButton secondary type="info" @click="encode = window.btoa(source)">编码</NButton>
+        <NButton secondary type="info" @click="source = window.atob(encode)">解码</NButton>
       </NSpace>
       <NInput
         v-model:value="encode"
@@ -72,14 +72,8 @@ function clear() {
           <NRadioButton value="html">html</NRadioButton>
         </NRadioGroup>
         <div class="flex-1"></div>
-        <NButton strong secondary type="info" class="ml-4" @click="clear()">清空</NButton>
-        <NButton
-          strong
-          secondary
-          type="info"
-          class="ml-4"
-          @click="copyText(fileEncode[fileEncodeFormat])"
-        >
+        <NButton secondary type="info" class="ml-4" @click="clear()">清空</NButton>
+        <NButton secondary type="info" class="ml-4" @click="copyText(fileEncode[fileEncodeFormat])">
           复制
         </NButton>
       </div>
