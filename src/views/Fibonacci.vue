@@ -22,7 +22,7 @@ function genFib() {
 </script>
 
 <template>
-  <div class="text-3xl font-bold mb-8">{{ $route.meta.title }}</div>
+  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
   <NSpace align="center">
     <span>n =</span>
     <NInputNumber v-model:value="n" :min="0" />

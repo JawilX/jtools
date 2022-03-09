@@ -33,7 +33,7 @@ function convert(radix: number) {
 </script>
 
 <template>
-  <div class="text-3xl font-bold mb-8">{{ $route.meta.title }}</div>
+  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
   <NInputGroup class="mb-8">
     <NSelect v-model:value="hex" class="w-32" :options="hexOptions" />
     <NInput v-model:value="input" />
@@ -51,7 +51,7 @@ function convert(radix: number) {
     <tbody>
       <tr v-for="item in convertValue" :key="item.radix">
         <td>{{ item.radix }}</td>
-        <td class="truncate max-w-xs">
+        <td class="max-w-xs truncate">
           {{ item.value }}
         </td>
         <td>{{ item.note }}</td>

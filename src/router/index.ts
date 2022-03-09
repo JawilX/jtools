@@ -48,6 +48,15 @@ export const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/Deduplication.vue'),
   },
+  {
+    path: '/characterCount',
+    name: 'characterCount',
+    meta: {
+      title: '字符数统计',
+      icon: '',
+    },
+    component: () => import('@/views/CharacterCount.vue'),
+  },
 ]
 
 const router = createRouter({

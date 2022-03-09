@@ -28,7 +28,7 @@ function clear() {
 </script>
 
 <template>
-  <div class="text-3xl font-bold mb-8">{{ $route.meta.title }}</div>
+  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
   <NInput v-model:value="input" type="textarea" :rows="10" placeholder="输入需要统计的内容" />
   <NSpace class="py-2" justify="center">
     <NButton secondary type="info" @click="deduplication">开始统计</NButton>

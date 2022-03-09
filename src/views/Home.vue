@@ -9,7 +9,7 @@ const tools = routes.filter(item => !item.meta?.hide)
       v-for="(item, index) in tools"
       :key="index"
       :to="item.path"
-      class="flex h-16 items-center rounded border border-gray-200 border-solid bg-gray-50 p-3 text-lg"
+      class="flex h-16 items-center rounded border border-solid border-gray-200 bg-gray-50 p-3 text-lg"
     >
       {{ item.meta?.title }}
     </router-link>
