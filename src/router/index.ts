@@ -39,6 +39,15 @@ export const routes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/HexConvert.vue'),
   },
+  {
+    path: '/deduplication',
+    name: 'deduplication',
+    meta: {
+      title: '统计重复行数',
+      icon: '',
+    },
+    component: () => import('@/views/Deduplication.vue'),
+  },
 ]
 
 const router = createRouter({
