@@ -4,7 +4,7 @@ const tools = routes.filter(item => !item.meta?.hide)
 </script>
 
 <template>
-  <div class="grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3">
+  <div class="mx-2 grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3">
     <router-link
       v-for="(item, index) in tools"
       :key="index"

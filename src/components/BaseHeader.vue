@@ -2,7 +2,7 @@
 
 <template>
   <div class="w-full bg-gray-800">
-    <div class="m bg-dark-700 m-auto flex h-14 max-w-5xl items-center">
+    <div class="bg-dark-700 m-auto flex h-14 max-w-5xl items-center px-2">
       <router-link class="cursor-pointer text-2xl font-bold text-gray-200" to="/" title="JTools">
         <span>J</span>
         <span class="rounded-md bg-orange-600 px-1">Tools</span>
