@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { NConfigProvider, NMessageProvider } from 'naive-ui'
-import BaseLayout from './components/BaseLayout.vue'
 </script>
 
 <template>
   <NConfigProvider>
     <NMessageProvider>
-      <BaseLayout />
+      <router-view />
     </NMessageProvider>
   </NConfigProvider>
 </template>

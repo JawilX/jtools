@@ -59,9 +59,21 @@ export const routes: Array<RouteRecordRaw> = [
   },
 ]
 
+const otherRoutes: Array<RouteRecordRaw> = [
+  {
+    path: '/test',
+    name: 'test',
+    meta: {
+      title: '测试',
+      icon: '',
+    },
+    component: () => import('@/views/Test.vue'),
+  },
+]
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes,
+  routes: [...routes, ...otherRoutes],
 })
 
 router.beforeEach((to, from) => {

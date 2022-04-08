@@ -11,7 +11,7 @@ window.$message = useMessage()
     <BaseHeader />
 
     <div class="m-auto w-full max-w-3xl flex-1 py-6">
-      <router-view />
+      <slot></slot>
     </div>
 
     <BaseFooter />
