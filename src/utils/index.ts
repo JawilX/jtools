@@ -12,3 +12,22 @@ export function copyText(text: string) {
   navigator.clipboard.writeText(text)
   window.$message.success('复制成功')
 }
+
+export function convertFileSize(size: number) {
+  const unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+  let index = 0
+  while (size > 1024) {
+    size /= 1024
+    index++
+  }
+  return `${size.toFixed(2)}${unit[index]}`
+}
+
+export function downloadFile(file: Blob, fileName: string) {
+  const url = window.URL.createObjectURL(file)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = fileName
+  a.click()
+  window.URL.revokeObjectURL(url)
+}

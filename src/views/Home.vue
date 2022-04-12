@@ -1,13 +1,16 @@
 <script setup lang="ts">
 import BaseLayout from '@/components/BaseLayout.vue'
-import { routes } from '@/router/index'
+import { homeChildren } from '@/router/index'
 
-const tools = routes.filter(item => !item.meta?.hide)
+const tools = homeChildren.filter(item => !item.meta?.hide)
 </script>
 
 <template>
   <BaseLayout>
-    <div class="mx-2 grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3">
+    <div
+      v-if="$route.fullPath === '/'"
+      class="mx-2 grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3"
+    >
       <router-link
         v-for="(item, index) in tools"
         :key="index"
@@ -17,5 +20,6 @@ const tools = routes.filter(item => !item.meta?.hide)
         {{ item.meta?.title }}
       </router-link>
     </div>
+    <router-view v-else />
   </BaseLayout>
 </template>

@@ -1,17 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
 
-export const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'home',
-    meta: {
-      title: 'JTools',
-      icon: '',
-      hide: true,
-    },
-    component: () => import('@/views/Home.vue'),
-  },
+export const homeChildren: Array<RouteRecordRaw> = [
   {
     path: '/base64',
     name: 'base64',
@@ -56,6 +46,29 @@ export const routes: Array<RouteRecordRaw> = [
       icon: '',
     },
     component: () => import('@/views/CharacterCount.vue'),
+  },
+  {
+    path: '/tinyimg',
+    name: 'tinyimg',
+    meta: {
+      title: '图片压缩',
+      icon: '',
+    },
+    component: () => import('@/views/TinyImg.vue'),
+  },
+]
+
+export const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    name: 'home',
+    meta: {
+      title: 'JTools',
+      icon: '',
+      hide: true,
+    },
+    component: () => import('@/views/Home.vue'),
+    children: homeChildren,
   },
 ]
 
