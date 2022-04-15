@@ -23,6 +23,7 @@ export default defineConfig(env => {
       proxy: {},
     },
     build: {
+      target: 'esnext',
       terserOptions: {
         compress: {
           drop_console: true,
