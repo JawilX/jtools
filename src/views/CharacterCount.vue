@@ -17,7 +17,7 @@ const info = computed(() => {
 </script>
 
 <template>
-  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
+  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
   <NInput v-model:value="input" type="textarea" :rows="16" placeholder="" />
   <div class="my-4">
     <span class="font-bold">总计：</span>

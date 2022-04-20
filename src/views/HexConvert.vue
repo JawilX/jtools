@@ -33,7 +33,7 @@ function convert(radix: number) {
 </script>
 
 <template>
-  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
+  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
   <NInputGroup class="mb-8">
     <NSelect v-model:value="hex" class="w-32" :options="hexOptions" />
     <NInput v-model:value="input" />

@@ -55,7 +55,7 @@ function handleRemove(index: number) {
 </script>
 
 <template>
-  <div class="mb-8 text-3xl font-bold">{{ $route.meta.title }}</div>
+  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
   <NUpload
     v-model:file-list="fileList"
     :show-file-list="false"
