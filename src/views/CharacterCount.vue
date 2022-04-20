@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { NInput } from 'naive-ui'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 const input = ref('')
 const info = computed(() => {
@@ -17,7 +18,7 @@ const info = computed(() => {
 </script>
 
 <template>
-  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
+  <BaseTitle />
   <NInput v-model:value="input" type="textarea" :rows="16" placeholder="" />
   <div class="my-4">
     <span class="font-bold">总计：</span>

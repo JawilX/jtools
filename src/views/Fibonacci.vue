@@ -2,6 +2,7 @@
 import type { Ref } from 'vue'
 import { ref } from 'vue'
 import { NSpace, NInputNumber, NButton } from 'naive-ui'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 const n: Ref<number | null> = ref(null)
 const fib: Ref<BigInt | number | null> = ref(null)
@@ -22,7 +23,7 @@ function genFib() {
 </script>
 
 <template>
-  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
+  <BaseTitle />
   <NSpace align="center">
     <span>n =</span>
     <NInputNumber v-model:value="n" :min="0" />

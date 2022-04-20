@@ -6,6 +6,7 @@ import { NUpload, NUploadDragger, NIcon, NP, NText, NSpace } from 'naive-ui'
 import { Add28Regular } from '@vicons/fluent'
 import Compressor from 'compressorjs'
 import { convertFileSize, downloadFile } from '@/utils/index'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 type TableItem = {
   id: string
@@ -55,7 +56,7 @@ function handleRemove(index: number) {
 </script>
 
 <template>
-  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
+  <BaseTitle />
   <NUpload
     v-model:file-list="fileList"
     :show-file-list="false"

@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { NInput, NButton, NSpace } from 'naive-ui'
 import { copyText } from '@/utils'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 const input = ref('')
 
@@ -28,7 +29,7 @@ function clear() {
 </script>
 
 <template>
-  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
+  <BaseTitle />
   <NInput v-model:value="input" type="textarea" :rows="10" placeholder="输入需要统计的内容" />
   <NSpace class="py-2" justify="center">
     <NButton secondary type="info" @click="deduplication">开始统计</NButton>

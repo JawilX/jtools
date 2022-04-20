@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { NInputGroup, NInput, NSelect, NTable, NButton } from 'naive-ui'
 import { copyText } from '@/utils'
+import BaseTitle from '@/components/BaseTitle.vue'
 
 const hex = ref(10)
 const hexOptions = [
@@ -33,7 +34,7 @@ function convert(radix: number) {
 </script>
 
 <template>
-  <div class="mb-6 text-2xl font-bold">{{ $route.meta.title }}</div>
+  <BaseTitle />
   <NInputGroup class="mb-8">
     <NSelect v-model:value="hex" class="w-32" :options="hexOptions" />
     <NInput v-model:value="input" />
