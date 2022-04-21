@@ -15,7 +15,7 @@ const tools = homeChildren.filter(item => !item.meta?.hide)
         v-for="(item, index) in tools"
         :key="index"
         :to="item.path"
-        class="flex h-16 items-center rounded border border-solid border-black/5 p-5 text-lg shadow shadow-slate-200 transition-all duration-200 hover:border-black/10 hover:shadow-lg"
+        class="flex h-20 items-center rounded border border-solid border-black/5 p-5 text-lg shadow shadow-slate-200 transition-all duration-200 hover:border-black/10 hover:shadow-lg"
       >
         {{ item.meta?.title }}
       </router-link>
