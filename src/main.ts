@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from '@/router/index'
 import naive from 'naive-ui'
+import '@/plugins/day'
 
 import './assets/styles/index.css'
 import 'normalize.css'

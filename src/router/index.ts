@@ -56,6 +56,15 @@ export const homeChildren: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/TinyImg.vue'),
   },
+  {
+    path: '/timestamp',
+    name: 'timestamp',
+    meta: {
+      title: '时间戳转换',
+      icon: '',
+    },
+    component: () => import('@/views/Timestamp.vue'),
+  },
 ]
 
 export const routes: Array<RouteRecordRaw> = [
