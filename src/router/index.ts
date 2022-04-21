@@ -65,6 +65,15 @@ export const homeChildren: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/Timestamp.vue'),
   },
+  {
+    path: '/numberUpper',
+    name: 'numberUpper',
+    meta: {
+      title: '数字转中文大写',
+      icon: '',
+    },
+    component: () => import('@/views/NumberUpper.vue'),
+  },
 ]
 
 export const routes: Array<RouteRecordRaw> = [

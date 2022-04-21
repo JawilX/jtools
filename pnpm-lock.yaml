@@ -20,6 +20,7 @@ specifiers:
   naive-ui: ^2.25.5
   normalize.css: ^8.0.1
   nprogress: ^0.2.0
+  nzh: ^1.0.8
   postcss: ^8.4.6
   prettier: ^2.5.1
   prettier-plugin-tailwindcss: ^0.1.7
@@ -37,6 +38,7 @@ dependencies:
   naive-ui: 2.25.5_vue@3.2.31
   normalize.css: 8.0.1
   nprogress: 0.2.0
+  nzh: 1.0.8
   vue: 3.2.31
   vue-router: 4.0.12_vue@3.2.31
 
@@ -2023,6 +2025,10 @@ packages:
 
   /nprogress/0.2.0:
     resolution: {integrity: sha1-y480xTIT2JVyP8urkH6UIq28r7E=}
+    dev: false
+
+  /nzh/1.0.8:
+    resolution: {integrity: sha512-fm9qlo0aBJxbi3dt4ix+iqRa95tAWAptwmSNTfUEleCitbTz8D3i7KPu0O2mecnvVn+b/JMb4uJqHOj2yJf3hQ==}
     dev: false
 
   /object-assign/4.1.1:

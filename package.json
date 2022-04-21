@@ -15,6 +15,7 @@
     "naive-ui": "^2.25.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
+    "nzh": "^1.0.8",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
