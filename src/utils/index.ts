@@ -8,8 +8,8 @@ export function toBase64(file?: Blob | null): Promise<string> {
   })
 }
 
-export function copyText(text: string) {
-  navigator.clipboard.writeText(text)
+export function copyText(text: string | number) {
+  navigator.clipboard.writeText(String(text))
   window.$message.success('复制成功')
 }
 
