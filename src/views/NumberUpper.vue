@@ -11,12 +11,12 @@ const upper = computed(() => nzh.cn.toMoney(number.value, { outSymbol: false }))
 
 <template>
   <BaseTitle />
-  <NInputGroup class="w-96">
+  <NInputGroup class="!w-96">
     <NInputGroupLabel>阿拉伯数字</NInputGroupLabel>
     <NInput v-model:value="number" class="flex-1" />
   </NInputGroup>
   <NSpace class="py-4">
-    <NInputGroup class="w-96">
+    <NInputGroup class="!w-96">
       <NInputGroupLabel>结果</NInputGroupLabel>
       <NInput v-model:value="upper" class="flex-1" />
     </NInputGroup>

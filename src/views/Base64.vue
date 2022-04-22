@@ -41,7 +41,7 @@ function clear() {
 </script>
 
 <template>
-  <NTabs type="line">
+  <NTabs type="segment">
     <NTabPane name="string" tab="字符 base64">
       <NInput
         v-model:value="source"
@@ -72,10 +72,12 @@ function clear() {
           <NRadioButton value="html">html</NRadioButton>
         </NRadioGroup>
         <div class="flex-1"></div>
-        <NButton secondary type="info" class="ml-4" @click="clear()">清空</NButton>
-        <NButton secondary type="info" class="ml-4" @click="copyText(fileEncode[fileEncodeFormat])">
-          复制
-        </NButton>
+        <NSpace>
+          <NButton secondary type="info" @click="clear()">清空</NButton>
+          <NButton secondary type="info" @click="copyText(fileEncode[fileEncodeFormat])">
+            复制
+          </NButton>
+        </NSpace>
       </div>
       <NInput
         v-show="fileEncodeFormat === 'dataUrl'"

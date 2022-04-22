@@ -64,7 +64,7 @@ const convertSecond = computed(() => {
     </NInputGroup>
   </NSpace>
 
-  <BaseTitle class="my-6 mt-12" text="获取时间戳" />
+  <BaseTitle class="!mt-12" text="获取时间戳" />
   <NSpace align="center">
     <NInput v-model:value="inputDate" clearable placeholder="时间" />
   </NSpace>
@@ -81,14 +81,14 @@ const convertSecond = computed(() => {
     </NInputGroup>
   </NSpace>
 
-  <BaseTitle class="my-6 mt-12" text="秒转天、小时、分钟、秒" />
+  <BaseTitle class="!mt-12" text="秒转天、小时、分钟、秒" />
   <NInputGroup class="w-[231px]">
     <NInput v-model:value="inputSecond" clearable />
     <NInputGroupLabel class="">秒</NInputGroupLabel>
   </NInputGroup>
   <div class="p-4">{{ convertSecond }}</div>
 
-  <BaseTitle class="my-6 mt-48" text="什么是Unix时间戳" />
+  <BaseTitle class="!mt-48" text="什么是Unix时间戳" />
   <div class="leading-6">
     Unix时间戳（Unix时间/POSIX时间）是自1970年1月1日（UTC / GMT午夜）以来经过的秒数。
     此页面上的转换器将以秒（10位数字）和毫秒（13位数字）为单位的时间戳转换为可读的日期。

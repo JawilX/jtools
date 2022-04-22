@@ -3,7 +3,7 @@ import { NConfigProvider, NMessageProvider, zhCN, dateZhCN } from 'naive-ui'
 </script>
 
 <template>
-  <NConfigProvider :locale="zhCN" :date-locale="dateZhCN">
+  <NConfigProvider :locale="zhCN" :date-locale="dateZhCN" :inline-theme-disabled="true">
     <NMessageProvider>
       <router-view />
     </NMessageProvider>

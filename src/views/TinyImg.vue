@@ -36,7 +36,7 @@ function handleChange(options: { file: UploadFileInfo }) {
     size: file?.file?.size || 0,
     compressedFile: null,
     compressedSize: 0,
-    status: 'pending',
+    status: 'warning',
   })
   tableList.push(tableItem)
   new Compressor(file.file as File, {
@@ -65,27 +65,27 @@ function handleRemove(index: number) {
     @before-upload="handleBeforeUpload"
     @change="handleChange"
   >
-    <NUploadDragger class="h-40 w-[48rem] bg-white">
+    <NUploadDragger class="h-40 bg-white">
       <NIcon size="20" depth="3" class="mt-8">
         <Add28Regular />
       </NIcon>
-      <NP class="text-xs">
+      <NP>
         将文件拖到此处，或
-        <NText class="text-blue-500">点击上传</NText>
+        <NText type="info">点击上传</NText>
       </NP>
     </NUploadDragger>
   </NUpload>
-  <NP class="text-xs">
+  <NP depth="3">
     *只能上传
-    <NText class="text-blue-500">jpg</NText>
+    <NText type="info">jpg</NText>
     /
-    <NText class="text-blue-500">png</NText>
+    <NText type="info">png</NText>
     /
-    <NText class="text-blue-500">jpeg</NText>
+    <NText type="info">jpeg</NText>
     /
-    <NText class="text-blue-500">gif</NText>
+    <NText type="info">gif</NText>
     文件，且不超过
-    <NText class="text-blue-500">10MB</NText>
+    <NText type="info">10MB</NText>
   </NP>
 
   <NTable v-if="tableList.length > 0" :bordered="false">
@@ -108,8 +108,7 @@ function handleRemove(index: number) {
           {{ -((1 - item.compressedSize / item.size) * 100).toFixed(2) }}%
         </td>
         <td>
-          <span v-if="item.status === 'pending'" class="text-yellow-500">处理中...</span>
-          <span v-if="item.status === 'success'" class="text-green-500">完成</span>
+          <NText :type="item.status">{{ item.status === 'success' ? '完成' : '处理中...' }}</NText>
         </td>
         <td>
           <NSpace>
