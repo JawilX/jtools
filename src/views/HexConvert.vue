@@ -45,14 +45,14 @@ function convert(radix: number) {
       <tr>
         <th width="80">进制</th>
         <th>值</th>
-        <th width="160">备注</th>
+        <th width="140">备注</th>
         <th width="80">操作</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in convertValue" :key="item.radix">
         <td>{{ item.radix }}</td>
-        <td class="max-w-xs truncate">
+        <td class="max-w-[4rem] truncate">
           {{ item.value }}
         </td>
         <td>{{ item.note }}</td>

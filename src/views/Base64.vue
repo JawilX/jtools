@@ -46,7 +46,7 @@ function clear() {
       <NInput
         v-model:value="source"
         type="textarea"
-        :rows="10"
+        :rows="9"
         placeholder="请输入需要转码的字符串"
       />
       <NSpace class="py-2" justify="center">
@@ -56,7 +56,7 @@ function clear() {
       <NInput
         v-model:value="encode"
         type="textarea"
-        :rows="10"
+        :rows="9"
         placeholder="请输入需要解码的字符串"
       />
     </NTabPane>
@@ -83,21 +83,21 @@ function clear() {
         v-show="fileEncodeFormat === 'dataUrl'"
         v-model:value="fileEncode.dataUrl"
         type="textarea"
-        :rows="20"
+        :rows="16"
         placeholder=""
       />
       <NInput
         v-show="fileEncodeFormat === 'css'"
         v-model:value="fileEncode.css"
         type="textarea"
-        :rows="20"
+        :rows="16"
         placeholder=""
       />
       <NInput
         v-show="fileEncodeFormat === 'html'"
         v-model:value="fileEncode.html"
         type="textarea"
-        :rows="20"
+        :rows="16"
         placeholder=""
       />
     </NTabPane>

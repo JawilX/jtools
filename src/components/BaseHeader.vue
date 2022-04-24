@@ -2,7 +2,7 @@
 
 <template>
   <div class="w-full shadow-sm shadow-slate-200">
-    <div class="m-auto flex h-12 max-w-5xl items-center px-2">
+    <div class="m-auto flex h-12 max-w-5xl items-center px-4">
       <router-link class="cursor-pointer text-xl" to="/" title="JTools">
         <span>JTools</span>
       </router-link>

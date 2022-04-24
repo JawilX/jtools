@@ -88,42 +88,48 @@ function handleRemove(index: number) {
     <NText type="info">10MB</NText>
   </NP>
 
-  <NTable v-if="tableList.length > 0" :bordered="false">
-    <thead>
-      <tr>
-        <th width="180">文件名</th>
-        <th width="100">压缩前</th>
-        <th width="100">压缩后</th>
-        <th width="100">压缩率</th>
-        <th width="100">状态</th>
-        <th width="140">操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(item, index) in tableList" :key="item.id">
-        <td>{{ item.name }}</td>
-        <td>{{ convertFileSize(item.size) }}</td>
-        <td>{{ convertFileSize(item.compressedSize) }}</td>
-        <td class="!text-green-500">
-          {{ -((1 - item.compressedSize / item.size) * 100).toFixed(2) }}%
-        </td>
-        <td>
-          <NText :type="item.status">{{ item.status === 'success' ? '完成' : '处理中...' }}</NText>
-        </td>
-        <td>
-          <NSpace>
-            <NButton size="small" secondary type="error" @click="handleRemove(index)">删除</NButton>
-            <NButton
-              size="small"
-              secondary
-              type="primary"
-              @click="downloadFile(item.compressedFile as Blob, item.name)"
-            >
-              下载
-            </NButton>
-          </NSpace>
-        </td>
-      </tr>
-    </tbody>
-  </NTable>
+  <div class="overflow-auto">
+    <NTable v-if="tableList.length > 0" :bordered="false">
+      <thead>
+        <tr>
+          <th width="180">文件名</th>
+          <th width="100">压缩前</th>
+          <th width="100">压缩后</th>
+          <th width="100">压缩率</th>
+          <th width="100">状态</th>
+          <th width="120">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in tableList" :key="item.id">
+          <td>{{ item.name }}</td>
+          <td>{{ convertFileSize(item.size) }}</td>
+          <td>{{ convertFileSize(item.compressedSize) }}</td>
+          <td class="!text-green-500">
+            {{ -((1 - item.compressedSize / item.size) * 100).toFixed(2) }}%
+          </td>
+          <td>
+            <NText :type="item.status">
+              {{ item.status === 'success' ? '完成' : '处理中...' }}
+            </NText>
+          </td>
+          <td>
+            <NSpace :wrap="false">
+              <NButton size="small" secondary type="error" @click="handleRemove(index)">
+                删除
+              </NButton>
+              <NButton
+                size="small"
+                secondary
+                type="primary"
+                @click="downloadFile(item.compressedFile as Blob, item.name)"
+              >
+                下载
+              </NButton>
+            </NSpace>
+          </td>
+        </tr>
+      </tbody>
+    </NTable>
+  </div>
 </template>

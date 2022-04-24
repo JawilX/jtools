@@ -9,7 +9,7 @@ const tools = homeChildren.filter(item => !item.meta?.hide)
   <BaseLayout>
     <div
       v-if="$route.fullPath === '/'"
-      class="mx-2 grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3"
+      class="grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3"
     >
       <router-link
         v-for="(item, index) in tools"

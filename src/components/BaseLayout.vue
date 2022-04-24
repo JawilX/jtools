@@ -9,7 +9,7 @@ window.$message = useMessage()
   <div class="flex min-h-screen flex-col">
     <BaseHeader />
 
-    <div class="m-auto w-full max-w-3xl flex-1 py-6">
+    <div class="m-auto w-full max-w-3xl flex-1 py-6 px-4">
       <slot></slot>
     </div>
   </div>
