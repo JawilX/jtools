@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
 
 export const homeChildren: Array<RouteRecordRaw> = [
@@ -112,7 +112,7 @@ const otherRoutes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.VITE_BASE),
+  history: createWebHashHistory(import.meta.env.VITE_BASE),
   routes: [...routes, ...otherRoutes],
 })
 
