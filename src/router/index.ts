@@ -74,6 +74,15 @@ export const homeChildren: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/NumberUpper.vue'),
   },
+  {
+    path: '/lunar',
+    name: 'lunar',
+    meta: {
+      title: '老黄历',
+      icon: '',
+    },
+    component: () => import('@/views/Lunar.vue'),
+  },
 ]
 
 export const routes: Array<RouteRecordRaw> = [

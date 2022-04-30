@@ -17,6 +17,7 @@ specifiers:
   eslint-plugin-vue: ^8.4.1
   husky: ^7.0.4
   lint-staged: ^12.3.4
+  lunar-typescript: ^1.2.20
   naive-ui: ^2.25.5
   normalize.css: ^8.0.1
   nprogress: ^0.2.0
@@ -35,6 +36,7 @@ dependencies:
   '@vueuse/core': 8.1.1_vue@3.2.31
   compressorjs: 1.1.1
   dayjs: 1.11.1
+  lunar-typescript: 1.2.20
   naive-ui: 2.25.5_vue@3.2.31
   normalize.css: 8.0.1
   nprogress: 0.2.0
@@ -1920,6 +1922,10 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lunar-typescript/1.2.20:
+    resolution: {integrity: sha512-ZfPD+QO0nKof8LB5NDWvwQBHqHNUUIP9fETzn4vC0xgYjygWmOj2C/NxFgWD3MFkvHEBoB3w9eSOKn8kKIoYeA==}
+    dev: false
 
   /magic-string/0.25.7:
     resolution: {integrity: sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==}

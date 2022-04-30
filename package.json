@@ -23,6 +23,7 @@
     "@vueuse/core": "^8.1.1",
     "compressorjs": "^1.1.1",
     "dayjs": "^1.11.1",
+    "lunar-typescript": "^1.2.20",
     "naive-ui": "^2.25.5",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
