@@ -5,6 +5,7 @@ specifiers:
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^5.12.0
   '@typescript-eslint/parser': ^5.12.0
+  '@vicons/carbon': ^0.12.0
   '@vicons/fluent': ^0.12.0
   '@vitejs/plugin-vue': ^2.2.0
   '@vueuse/core': ^8.1.1
@@ -49,6 +50,7 @@ devDependencies:
   '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 5.12.0_c467cf9bb49b295941e83ce479a578b7
   '@typescript-eslint/parser': 5.12.0_eslint@8.9.0+typescript@4.5.5
+  '@vicons/carbon': 0.12.0
   '@vicons/fluent': 0.12.0
   '@vitejs/plugin-vue': 2.2.0_vite@2.8.3+vue@3.2.31
   autoprefixer: 10.4.2_postcss@8.4.6
@@ -352,6 +354,10 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.12.0
       eslint-visitor-keys: 3.3.0
+    dev: true
+
+  /@vicons/carbon/0.12.0:
+    resolution: {integrity: sha512-kCOgr/ZOhZzoiFLJ8pwxMa2TMxrkCUOA22qExPabus35F4+USqzcsxaPoYtqRd9ROOYiHrSqwapak/ywF0D9bg==}
     dev: true
 
   /@vicons/fluent/0.12.0:
