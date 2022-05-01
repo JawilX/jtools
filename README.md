@@ -1,11 +1,80 @@
-# Vue 3 + Typescript + Vite
+<p align='center'>
+  <img src='https://github.com/JawilX/jtools/blob/main/src/assets/logo.png?raw=true' alt='JTools - An Online Toolbox' width='40'/>
+</p>
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<p align='center'>
+  JTools - 在线工具箱
+</p>
 
-## Recommended IDE Setup
+<p align='center'>
+  <a href='https://jawilx.github.io/jtools/'>在线 Demo</a>
+</p>
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+<p align='center'>
+  <b>简体中文</b> | <a href='https://github.com/JawilX/jtools/blob/main/README.EN.md'>English</a>
+</p>
 
-## Type Support For `.vue` Imports in TS
+## 特性
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+- ⚡️ [Vue 3](https://vuejs.org/), [Vite 2](https://vite.net/), [pnpm](https://pnpm.js.org/) - 就是快！
+- 🦾 [TypeScript](https://www.typescriptlang.org/), 当然
+- 🔥 使用 `新的 <script setup> 语法`
+
+## UI 框架
+
+- [NaiveUI](https://naiveui.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+
+## Icons
+
+- [xicons](https://www.xicons.org/#/)
+
+## 插件
+
+- [Vue Router](https://router.vuejs.org/)
+- [VueUse](https://vueuse.org/)
+- [dayjs](https://day.js.org/)
+- [nzh](https://github.com/cnwhy/nzh)
+- [lunar-typescript](https://github.com/6tail/lunar-typescript)
+
+## 编码风格
+
+- 使用 Composition API 地 `<script setup> 语法`
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/), 单引号，无分号
+
+## 开始
+
+### 准备
+
+- pnpm
+  ```sh
+  brew install pnpm # Or npm install -g pnpm
+  ```
+
+### 安装
+
+1. 克隆仓库
+
+```sh
+git clone https://github.com/JawilX/jtools.git
+```
+
+2. 安装 NPM 包
+
+```sh
+pnpm install
+```
+
+3. 运行
+
+```sh
+pnpm dev
+```
+
+## 许可证
+
+在 MIT 许可证下发布，更多信息见`LICENSE.txt`。
+
+## 感谢
+
+- [tools.fun](https://tools.fun/)
