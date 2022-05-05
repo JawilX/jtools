@@ -11,8 +11,8 @@ import { NConfigProvider, NMessageProvider, zhCN, dateZhCN } from 'naive-ui'
 </template>
 
 <style>
-html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
 }
 </style>
