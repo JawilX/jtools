@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { Solar, Lunar } from 'lunar-typescript'
-import { NH2, NIcon } from 'naive-ui'
+import { NH2, NIcon, NDatePicker } from 'naive-ui'
 import { ArrowExportLtr20Filled, ArrowExportRtl20Filled } from '@vicons/fluent'
 
-const current = ref(new Date())
+const current = ref(Date.now())
 const add = () => {
-  current.value = new Date(current.value.getTime() + 86400000)
+  current.value = current.value + 86400000
 }
 const sub = () => {
-  current.value = new Date(current.value.getTime() - 86400000)
+  current.value = current.value - 86400000
 }
 
-const s = computed(() => Solar.fromDate(current.value))
+const s = computed(() => Solar.fromDate(new Date(current.value)))
 
-const l = computed(() => Lunar.fromDate(current.value))
+const l = computed(() => Lunar.fromDate(new Date(current.value)))
 </script>
 
 <template>
-  <NH2 class="text-center">
+  <NH2 class="relative text-center">
     <NIcon class="cursor-pointer align-middle" @click="sub">
       <ArrowExportRtl20Filled />
     </NIcon>
@@ -27,6 +27,12 @@ const l = computed(() => Lunar.fromDate(current.value))
         `${s.getYear()}年${s.getMonth()}月${s.getDay()}日 星期${s.getWeekInChinese()} ${s.getXingZuo()}座`
       }}
     </span>
+    <NDatePicker
+      v-model:value="current"
+      class="!absolute inline-block !w-52 -translate-x-[105%] opacity-0 md:!w-64"
+      :input-readonly="true"
+      :actions="['now']"
+    />
     <NIcon class="cursor-pointer align-middle" @click="add">
       <ArrowExportLtr20Filled />
     </NIcon>
