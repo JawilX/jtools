@@ -1,10 +1,21 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { Solar, Lunar } from 'lunar-typescript'
 import { NH2, NIcon, NDatePicker } from 'naive-ui'
 import { ArrowExportLtr20Filled, ArrowExportRtl20Filled } from '@vicons/fluent'
+import { useRouteQuery } from '@vueuse/router'
+import dayjs from 'dayjs'
 
 const current = ref(Date.now())
+
+const queryDate = useRouteQuery<string>('date')
+if (queryDate.value) {
+  current.value = dayjs(queryDate.value, 'YYYY-MM-DD').valueOf()
+}
+watch(current, val => {
+  queryDate.value = dayjs(val).format('YYYY-MM-DD')
+})
+
 const add = () => {
   current.value = current.value + 86400000
 }
