@@ -22,7 +22,7 @@ const fileEncode = reactive({
   css: '',
   html: '',
 })
-const fileList = ref([] as UploadFileInfo[])
+const fileList = ref<UploadFileInfo[]>([])
 async function handleFileChange(options: { file: UploadFileInfo; fileList: UploadFileInfo[] }) {
   fileList.value = options.fileList.slice(-1)
 
@@ -32,7 +32,7 @@ async function handleFileChange(options: { file: UploadFileInfo; fileList: Uploa
 }
 
 type Format = 'dataUrl' | 'css' | 'html'
-const fileEncodeFormat = ref('dataUrl' as Format)
+const fileEncodeFormat = ref<Format>('dataUrl')
 
 function clear() {
   fileEncode.dataUrl = fileEncode.css = fileEncode.html = ''
