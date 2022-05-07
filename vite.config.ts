@@ -3,9 +3,9 @@ import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
-export default defineConfig(env => {
+export default defineConfig(({ mode }) => {
   // env 环境变量
-  const viteEnv = loadEnv(env.mode, `.env.${env.mode}`)
+  const viteEnv = loadEnv(mode, process.cwd())
 
   return {
     base: viteEnv.VITE_BASE,
