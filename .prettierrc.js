@@ -4,5 +4,6 @@ module.exports = {
   singleQuote: true,
   semi: false,
   arrowParens: 'avoid',
+  // https://prettier.io/blog/2018/11/07/1.15.0.html#whitespace-sensitive-formatting
   htmlWhitespaceSensitivity: 'ignore',
 }
