@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
 import type { UploadFileInfo } from 'naive-ui'
-import {
-  NTabs,
-  NTabPane,
-  NInput,
-  NButton,
-  NSpace,
-  NUpload,
-  NRadioGroup,
-  NRadioButton,
-} from 'naive-ui'
 
 import { toBase64, copyText } from '@/utils/index'
 

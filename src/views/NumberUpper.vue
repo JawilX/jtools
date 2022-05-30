@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import BaseTitle from '@/components/BaseTitle.vue'
-import { NInputGroup, NInputGroupLabel, NInput, NButton } from 'naive-ui'
 import nzh from 'nzh'
 import { copyText } from '@/utils'
 

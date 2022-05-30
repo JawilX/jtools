@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { NIcon } from 'naive-ui'
 import { LogoGithub } from '@vicons/carbon'
 </script>
 

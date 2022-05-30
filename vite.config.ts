@@ -1,6 +1,9 @@
 import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
-import vue from '@vitejs/plugin-vue'
+import Vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -9,7 +12,23 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: viteEnv.VITE_BASE,
-    plugins: [vue()],
+    plugins: [
+      Vue(),
+
+      // https://github.com/antfu/unplugin-auto-import
+      AutoImport({
+        imports: ['vue', 'vue-router', '@vueuse/core'],
+        dts: 'src/auto-import.d.ts',
+        dirs: ['src/composables', 'src/store'],
+        vueTemplate: false,
+      }),
+
+      // https://github.com/antfu/unplugin-vue-components
+      Components({
+        dts: 'src/components.d.ts',
+        resolvers: [NaiveUiResolver()],
+      }),
+    ],
     // 别名设置
     resolve: {
       alias: {

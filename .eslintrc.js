@@ -32,6 +32,21 @@ module.exports = {
     defineProps: true,
     defineExpose: true,
   },
+  overrides: [
+    {
+      files: ['*.vue'],
+      parser: 'vue-eslint-parser',
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+      },
+      rules: {
+        'no-unused-vars': 'off',
+        'no-undef': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        'vue/multi-word-component-names': 'warn',
+      },
+    },
+  ],
   rules: {
     // 违反 Prettier 的规则就报 error
     'prettier/prettier': 'error',

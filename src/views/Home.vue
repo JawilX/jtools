@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import BaseLayout from '@/components/BaseLayout.vue'
 import { homeChildren } from '@/router/index'
 
 const tools = homeChildren.filter(item => !item.meta?.hide)

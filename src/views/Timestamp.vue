@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import BaseTitle from '@/components/BaseTitle.vue'
-import { NSpace, NButton, NInputGroup, NInputGroupLabel, NInput, NTable } from 'naive-ui'
-import { useTimestamp } from '@vueuse/core'
 import { copyText } from '@/utils'
 import dayjs from 'dayjs'
 

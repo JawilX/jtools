@@ -1,11 +1,6 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { ref } from 'vue'
-import { NSpace, NInputNumber, NButton } from 'naive-ui'
-import BaseTitle from '@/components/BaseTitle.vue'
-
-const n: Ref<number | null> = ref(null)
-const fib: Ref<BigInt | number | null> = ref(null)
+const n = ref<number | null>(null)
+const fib = ref<bigint | number | null>(null)
 
 function genFib() {
   if (n.value === null) return

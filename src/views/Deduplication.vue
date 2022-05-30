@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { NInput, NButton, NSpace } from 'naive-ui'
 import { copyText } from '@/utils'
-import BaseTitle from '@/components/BaseTitle.vue'
 
 const input = ref('')
 

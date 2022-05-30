@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { NInput } from 'naive-ui'
-import BaseTitle from '@/components/BaseTitle.vue'
-
 const input = ref('')
 const info = computed(() => {
   const value = input.value

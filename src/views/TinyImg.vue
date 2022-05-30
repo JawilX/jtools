@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import type { UploadFileInfo } from 'naive-ui'
-import { ref, reactive } from 'vue'
 
-import { NUpload, NUploadDragger, NIcon, NP, NText, NSpace } from 'naive-ui'
 import { Add28Regular } from '@vicons/fluent'
 import Compressor from 'compressorjs'
 import { convertFileSize, downloadFile } from '@/utils/index'
-import BaseTitle from '@/components/BaseTitle.vue'
 
 type TableItem = {
   id: string
