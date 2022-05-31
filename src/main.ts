@@ -3,6 +3,7 @@ import router from '@/router/index'
 import '@/plugins/day'
 
 import './assets/styles/index.css'
+import './assets/styles/naive.css'
 import 'normalize.css'
 
 const meta = document.createElement('meta')
