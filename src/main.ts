@@ -1,10 +1,8 @@
 import App from './App.vue'
 import router from '@/router/index'
-import naive from 'naive-ui'
 import '@/plugins/day'
 
 import './assets/styles/index.css'
-import './assets/styles/naive.css'
 import 'normalize.css'
 
 const meta = document.createElement('meta')
@@ -18,4 +16,4 @@ app.config.errorHandler = (err, vm, info) => {
   console.error('[全局异常]', err, vm, info)
 }
 
-app.use(router).use(naive).mount('#app')
+app.use(router).mount('#app')

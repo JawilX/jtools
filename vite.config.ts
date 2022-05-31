@@ -4,6 +4,7 @@ import Vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -12,6 +13,10 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: viteEnv.VITE_BASE,
+    define: {
+      // disable Options API support
+      __VUE_OPTIONS_API__: false,
+    },
     plugins: [
       Vue(),
 
@@ -28,6 +33,8 @@ export default defineConfig(({ mode }) => {
         dts: 'src/components.d.ts',
         resolvers: [NaiveUiResolver()],
       }),
+
+      visualizer(),
     ],
     // 别名设置
     resolve: {
