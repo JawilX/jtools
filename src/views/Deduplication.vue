@@ -24,11 +24,13 @@ function clear() {
 </script>
 
 <template>
-  <BaseTitle />
-  <NInput v-model:value="input" type="textarea" :rows="9" placeholder="输入需要统计的内容" />
-  <NSpace class="py-2" justify="center">
-    <NButton secondary type="info" @click="copyText(output)">复制结果</NButton>
-    <NButton secondary type="info" @click="clear">清空</NButton>
-  </NSpace>
-  <NInput v-model:value="output" type="textarea" :rows="9" placeholder="统计结果" />
+  <section>
+    <BaseTitle />
+    <NInput v-model:value="input" type="textarea" :rows="9" placeholder="输入需要统计的内容" />
+    <NSpace class="py-2" justify="center">
+      <NButton secondary type="info" @click="copyText(output)">复制结果</NButton>
+      <NButton secondary type="info" @click="clear">清空</NButton>
+    </NSpace>
+    <NInput v-model:value="output" type="textarea" :rows="9" placeholder="统计结果" />
+  </section>
 </template>

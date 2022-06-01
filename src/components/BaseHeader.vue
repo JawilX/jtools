@@ -5,9 +5,9 @@ import { LogoGithub } from '@vicons/carbon'
 <template>
   <div class="w-full shadow-sm shadow-slate-200">
     <div class="m-auto flex h-12 max-w-5xl items-center px-4">
-      <router-link class="cursor-pointer text-xl" to="/" title="JTools">
+      <RouterLink class="cursor-pointer text-xl" to="/" title="JTools">
         <span>JTools</span>
-      </router-link>
+      </RouterLink>
       <span class="flex-1"></span>
       <a
         class="cursor-pointer"

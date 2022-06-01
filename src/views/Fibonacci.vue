@@ -18,11 +18,13 @@ function genFib() {
 </script>
 
 <template>
-  <BaseTitle />
-  <NSpace align="center">
-    <span>n =</span>
-    <NInputNumber v-model:value="n" :min="0" />
-    <NButton @click="genFib()">确定</NButton>
-  </NSpace>
-  <div class="mt-4 break-all">{{ fib }}</div>
+  <section>
+    <BaseTitle />
+    <NSpace align="center">
+      <span>n =</span>
+      <NInputNumber v-model:value="n" :min="0" />
+      <NButton @click="genFib()">确定</NButton>
+    </NSpace>
+    <div class="mt-4 break-all">{{ fib }}</div>
+  </section>
 </template>

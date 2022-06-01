@@ -30,65 +30,67 @@ function clear() {
 </script>
 
 <template>
-  <NTabs type="segment">
-    <NTabPane name="string" tab="字符 base64">
-      <NInput
-        v-model:value="source"
-        type="textarea"
-        :rows="9"
-        placeholder="请输入需要转码的字符串"
-      />
-      <NSpace class="py-2" justify="center">
-        <NButton secondary type="info" @click="encode = window.btoa(source)">编码</NButton>
-        <NButton secondary type="info" @click="source = window.atob(encode)">解码</NButton>
-      </NSpace>
-      <NInput
-        v-model:value="encode"
-        type="textarea"
-        :rows="9"
-        placeholder="请输入需要解码的字符串"
-      />
-    </NTabPane>
-
-    <NTabPane name="file" tab="文件 base64">
-      <NUpload :file-list="fileList" :default-upload="false" @change="handleFileChange">
-        <NButton>选择文件</NButton>
-      </NUpload>
-      <div class="flex py-2">
-        <NRadioGroup v-model:value="fileEncodeFormat">
-          <NRadioButton value="dataUrl">data url</NRadioButton>
-          <NRadioButton value="css">css</NRadioButton>
-          <NRadioButton value="html">html</NRadioButton>
-        </NRadioGroup>
-        <div class="flex-1"></div>
-        <NSpace>
-          <NButton secondary type="info" @click="clear()">清空</NButton>
-          <NButton secondary type="info" @click="copyText(fileEncode[fileEncodeFormat])">
-            复制
-          </NButton>
+  <section>
+    <NTabs type="segment">
+      <NTabPane name="string" tab="字符 base64">
+        <NInput
+          v-model:value="source"
+          type="textarea"
+          :rows="9"
+          placeholder="请输入需要转码的字符串"
+        />
+        <NSpace class="py-2" justify="center">
+          <NButton secondary type="info" @click="encode = window.btoa(source)">编码</NButton>
+          <NButton secondary type="info" @click="source = window.atob(encode)">解码</NButton>
         </NSpace>
-      </div>
-      <NInput
-        v-show="fileEncodeFormat === 'dataUrl'"
-        v-model:value="fileEncode.dataUrl"
-        type="textarea"
-        :rows="16"
-        placeholder=""
-      />
-      <NInput
-        v-show="fileEncodeFormat === 'css'"
-        v-model:value="fileEncode.css"
-        type="textarea"
-        :rows="16"
-        placeholder=""
-      />
-      <NInput
-        v-show="fileEncodeFormat === 'html'"
-        v-model:value="fileEncode.html"
-        type="textarea"
-        :rows="16"
-        placeholder=""
-      />
-    </NTabPane>
-  </NTabs>
+        <NInput
+          v-model:value="encode"
+          type="textarea"
+          :rows="9"
+          placeholder="请输入需要解码的字符串"
+        />
+      </NTabPane>
+
+      <NTabPane name="file" tab="文件 base64">
+        <NUpload :file-list="fileList" :default-upload="false" @change="handleFileChange">
+          <NButton>选择文件</NButton>
+        </NUpload>
+        <div class="flex py-2">
+          <NRadioGroup v-model:value="fileEncodeFormat">
+            <NRadioButton value="dataUrl">data url</NRadioButton>
+            <NRadioButton value="css">css</NRadioButton>
+            <NRadioButton value="html">html</NRadioButton>
+          </NRadioGroup>
+          <div class="flex-1"></div>
+          <NSpace>
+            <NButton secondary type="info" @click="clear()">清空</NButton>
+            <NButton secondary type="info" @click="copyText(fileEncode[fileEncodeFormat])">
+              复制
+            </NButton>
+          </NSpace>
+        </div>
+        <NInput
+          v-show="fileEncodeFormat === 'dataUrl'"
+          v-model:value="fileEncode.dataUrl"
+          type="textarea"
+          :rows="16"
+          placeholder=""
+        />
+        <NInput
+          v-show="fileEncodeFormat === 'css'"
+          v-model:value="fileEncode.css"
+          type="textarea"
+          :rows="16"
+          placeholder=""
+        />
+        <NInput
+          v-show="fileEncodeFormat === 'html'"
+          v-model:value="fileEncode.html"
+          type="textarea"
+          :rows="16"
+          placeholder=""
+        />
+      </NTabPane>
+    </NTabs>
+  </section>
 </template>

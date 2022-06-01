@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import NProgress from 'nprogress'
 
-export const homeChildren: Array<RouteRecordRaw> = [
+export const toolList: Array<RouteRecordRaw> = [
   {
     path: '/base64',
     name: 'base64',
@@ -95,8 +95,8 @@ export const routes: Array<RouteRecordRaw> = [
       hide: true,
     },
     component: () => import('@/views/Home.vue'),
-    children: homeChildren,
   },
+  ...toolList,
 ]
 
 const otherRoutes: Array<RouteRecordRaw> = [
@@ -125,6 +125,9 @@ router.beforeEach((to, from) => {
 
 router.afterEach((to, from) => {
   NProgress.done()
+  const toDepth = to.path === '/' ? 1 : to.path.split('/').length
+  const fromDepth = from.path === '/' ? 1 : from.path.split('/').length
+  to.meta.transition = from.meta.transition = toDepth > fromDepth ? 'slide-left' : 'slide-right'
 })
 
 export default router

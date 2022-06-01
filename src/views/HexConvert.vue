@@ -31,32 +31,34 @@ function convert(radix: number) {
 </script>
 
 <template>
-  <BaseTitle />
-  <NInputGroup class="mb-6">
-    <NSelect v-model:value="hex" class="basis-28" :options="hexOptions" />
-    <NInput v-model:value="input" />
-  </NInputGroup>
+  <section>
+    <BaseTitle />
+    <NInputGroup class="mb-6">
+      <NSelect v-model:value="hex" class="basis-28" :options="hexOptions" />
+      <NInput v-model:value="input" />
+    </NInputGroup>
 
-  <NTable v-if="input" :bordered="false">
-    <thead>
-      <tr>
-        <th width="80">进制</th>
-        <th>值</th>
-        <th width="140">备注</th>
-        <th width="80">操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="item in convertValue" :key="item.radix">
-        <td>{{ item.radix }}</td>
-        <td class="max-w-[4rem] truncate">
-          {{ item.value }}
-        </td>
-        <td>{{ item.note }}</td>
-        <td>
-          <NButton size="small" secondary type="info" @click="copyText(item.value)">复制</NButton>
-        </td>
-      </tr>
-    </tbody>
-  </NTable>
+    <NTable v-if="input" :bordered="false">
+      <thead>
+        <tr>
+          <th width="80">进制</th>
+          <th>值</th>
+          <th width="140">备注</th>
+          <th width="80">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in convertValue" :key="item.radix">
+          <td>{{ item.radix }}</td>
+          <td class="max-w-[4rem] truncate">
+            {{ item.value }}
+          </td>
+          <td>{{ item.note }}</td>
+          <td>
+            <NButton size="small" secondary type="info" @click="copyText(item.value)">复制</NButton>
+          </td>
+        </tr>
+      </tbody>
+    </NTable>
+  </section>
 </template>

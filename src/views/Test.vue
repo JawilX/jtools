@@ -2,4 +2,6 @@
 const { x, y } = useMouse()
 </script>
 
-<template>{{ x }}, {{ y }}</template>
+<template>
+  <div>{{ x }}, {{ y }}</div>
+</template>
