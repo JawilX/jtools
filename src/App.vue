@@ -9,7 +9,7 @@ import { zhCN, dateZhCN } from 'naive-ui'
         <RouterView v-slot="{ Component, route }">
           <Transition :name="(route.meta.transition as string)">
             <Component
-              class="absolute top-12 m-auto w-full max-w-3xl flex-1 py-6 px-4"
+              class="absolute top-12 left-1/2 w-full max-w-3xl flex-1 -translate-x-1/2 py-6 px-4"
               :is="Component"
               :key="route.path"
             />
@@ -30,20 +30,20 @@ body {
 .slide-right-enter-active,
 .slide-left-leave-active,
 .slide-right-leave-active {
-  transition: all 0.8s ease-in-out;
+  transition: all 0.5s ease-in-out !important;
 }
 
 .slide-left-enter-from {
-  transform: translateX(100%);
+  transform: translateX(150%) !important;
 }
 .slide-left-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(-150%) !important;
 }
 
 .slide-right-enter-from {
-  transform: translateX(-100%);
+  transform: translateX(-150%) !important;
 }
 .slide-right-leave-to {
-  transform: translateX(100%);
+  transform: translateX(150%) !important;
 }
 </style>
