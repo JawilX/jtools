@@ -1,0 +1,1 @@
+import{d as o,M as s,aT as r,Q as n,U as c,aS as i}from"./index.2bc12701.js";import{N as m}from"./headers.60dbdafe.js";const f=o({name:"BaseTitle",props:{text:String},setup(t){return(e,p)=>{const a=m;return s(),r(a,{class:"mb-6"},{default:n(()=>[c(i(t.text||e.$route.meta.title),1)]),_:1})}}});export{f as _};
