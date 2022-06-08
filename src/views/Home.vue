@@ -5,7 +5,7 @@ const tools = toolList.filter(item => !item.meta?.hide)
 </script>
 
 <template>
-  <div class="grid auto-rows-auto grid-cols-2 gap-4 md:grid-cols-3">
+  <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
     <RouterLink
       v-for="(item, index) in tools"
       :key="index"
