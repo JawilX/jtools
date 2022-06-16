@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "author": "Jawil",
   "scripts": {
-    "build": "vue-tsc --noEmit && vite build",
     "dev": "vite",
-    "prepare": "husky install",
-    "preview": "vite preview"
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "@comment preinstall": "https://github.com/npm/cli/issues/2883",
+    "preinstall": "npx -y only-allow pnpm",
+    "prepare": "husky install"
   },
   "engines": {
     "node": "14.x || 16.x"
