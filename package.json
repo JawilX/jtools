@@ -8,6 +8,9 @@
     "prepare": "husky install",
     "preview": "vite preview"
   },
+  "engines": {
+    "node": "14.x || 16.x"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
