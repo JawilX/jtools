@@ -1,1 +1,0 @@
-import{a as o}from"./index.960e3e0f.js";import{d as n,M as r,O as c,aU as e,S as s}from"./index.124014c3.js";const l=n({__name:"Test",setup(p){const{x:t,y:a}=o();return(m,u)=>(r(),c("div",null,e(s(t))+", "+e(s(a)),1))}});export{l as default};
