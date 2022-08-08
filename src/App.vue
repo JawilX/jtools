@@ -9,9 +9,9 @@ import { zhCN, dateZhCN } from 'naive-ui'
         <RouterView v-slot="{ Component, route }">
           <Transition :name="(route.meta.transition as string)">
             <Component
-              class="absolute top-12 left-1/2 w-full max-w-3xl flex-1 -translate-x-1/2 py-6 px-4"
               :is="Component"
               :key="route.path"
+              class="absolute top-12 left-1/2 w-full max-w-3xl flex-1 -translate-x-1/2 py-6 px-4"
             />
           </Transition>
         </RouterView>
