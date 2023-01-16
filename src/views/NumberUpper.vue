@@ -3,7 +3,7 @@ import nzh from 'nzh'
 import { copyText } from '@/utils'
 
 const number = ref('')
-const upper = computed(() => nzh.cn.toMoney(number.value, { outSymbol: false }))
+const upper = computed(() => nzh.cn.toMoney(number.value ?? '', { outSymbol: false }))
 </script>
 
 <template>
@@ -11,7 +11,7 @@ const upper = computed(() => nzh.cn.toMoney(number.value, { outSymbol: false }))
     <BaseTitle />
     <NInputGroup>
       <NInputGroupLabel>阿拉伯数字</NInputGroupLabel>
-      <NInput v-model:value="number" class="flex-1" />
+      <NInputNumber v-model:value="number" class="flex-1" clearable :show-button="false" />
     </NInputGroup>
     <div class="flex py-4">
       <NInputGroup class="mr-2 flex-1">
