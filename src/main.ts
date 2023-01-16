@@ -1,20 +1,22 @@
 import App from './App.vue'
-import router from '@/router/index'
+import { setupRouter } from '@/router/index'
 import '@/plugins/day'
 
 import './assets/styles/index.css'
 import './assets/styles/naive.css'
 import 'normalize.css'
 
-const meta = document.createElement('meta')
-meta.name = 'naive-ui-style'
-document.head.appendChild(meta)
-
-const app = createApp(App)
-
-app.config.globalProperties.window = window
-app.config.errorHandler = (err, vm, info) => {
-  console.error('[全局异常]', err, vm, info)
+async function setupApp() {
+  const app = createApp(App)
+  await setupRouter(app)
+  resolveNaiveAndTailwindConflict()
+  app.mount('#app')
 }
 
-app.use(router).mount('#app')
+function resolveNaiveAndTailwindConflict() {
+  const meta = document.createElement('meta')
+  meta.name = 'naive-ui-style'
+  document.head.appendChild(meta)
+}
+
+setupApp()

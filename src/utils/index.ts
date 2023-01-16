@@ -1,3 +1,5 @@
+import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
+
 export function toBase64(file?: Blob | null): Promise<string> {
   return new Promise((resolve, reject) => {
     if (!file) return reject('')
@@ -10,7 +12,7 @@ export function toBase64(file?: Blob | null): Promise<string> {
 
 export function copyText(text: string | number) {
   navigator.clipboard.writeText(String(text))
-  window.$message.success('复制成功')
+  getDiscreteApi().message.success('复制成功')
 }
 
 export function convertFileSize(size: number) {

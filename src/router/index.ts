@@ -1,8 +1,9 @@
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw, Router } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import type { App } from 'vue'
 import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
 
-export const toolList: Array<RouteRecordRaw> = [
+export const toolList: RouteRecordRaw[] = [
   {
     path: '/base64',
     name: 'base64',
@@ -86,7 +87,7 @@ export const toolList: Array<RouteRecordRaw> = [
   },
 ]
 
-export const routes: Array<RouteRecordRaw> = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
@@ -100,7 +101,7 @@ export const routes: Array<RouteRecordRaw> = [
   ...toolList,
 ]
 
-const otherRoutes: Array<RouteRecordRaw> = [
+const otherRoutes: RouteRecordRaw[] = [
   {
     path: '/test',
     name: 'test',
@@ -112,21 +113,26 @@ const otherRoutes: Array<RouteRecordRaw> = [
   },
 ]
 
-const router = createRouter({
-  history: createWebHashHistory(import.meta.env.VITE_BASE),
-  routes: [...routes, ...otherRoutes],
-})
+const setupRouterGuard = (router: Router) => {
+  router.beforeEach((to, from) => {
+    document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
+    getDiscreteApi().loadingBar.start()
+  })
 
-router.beforeEach((to, from) => {
-  document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
-  getDiscreteApi().loadingBar.start()
-})
+  router.afterEach((to, from) => {
+    getDiscreteApi().loadingBar.finish()
+    const toDepth = to.path === '/' ? 1 : to.path.split('/').length
+    const fromDepth = from.path === '/' ? 1 : from.path.split('/').length
+    to.meta.transition = from.meta.transition = toDepth > fromDepth ? 'slide-left' : 'slide-right'
+  })
+}
 
-router.afterEach((to, from) => {
-  getDiscreteApi().loadingBar.finish()
-  const toDepth = to.path === '/' ? 1 : to.path.split('/').length
-  const fromDepth = from.path === '/' ? 1 : from.path.split('/').length
-  to.meta.transition = from.meta.transition = toDepth > fromDepth ? 'slide-left' : 'slide-right'
-})
-
-export default router
+export const setupRouter = async (app: App) => {
+  const router = createRouter({
+    history: createWebHashHistory(import.meta.env.VITE_BASE),
+    routes: [...routes, ...otherRoutes],
+  })
+  app.use(router)
+  setupRouterGuard(router)
+  await router.isReady()
+}
