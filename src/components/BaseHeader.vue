@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LogoGithub } from '@vicons/carbon'
+import LogoGithub from '@vicons/carbon/LogoGithub'
 </script>
 
 <template>

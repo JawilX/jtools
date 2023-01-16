@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { UploadFileInfo } from 'naive-ui'
 
-import { Add28Regular } from '@vicons/fluent'
+import Add28Regular from '@vicons/fluent/Add28Regular'
 import Compressor from 'compressorjs'
 import { convertFileSize, downloadFile } from '@/utils/index'
 

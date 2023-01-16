@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Solar, Lunar } from 'lunar-typescript'
-import { ArrowExportLtr20Filled, ArrowExportRtl20Filled } from '@vicons/fluent'
+import ArrowExportLtr20Filled from '@vicons/fluent/ArrowExportLtr20Filled'
+import ArrowExportRtl20Filled from '@vicons/fluent/ArrowExportRtl20Filled'
 import { useRouteQuery } from '@vueuse/router'
 import dayjs from 'dayjs'
 
