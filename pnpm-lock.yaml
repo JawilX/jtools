@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^17.0.45
-  '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^5.29.0
   '@typescript-eslint/parser': ^5.29.0
   '@vicons/carbon': ^0.12.0
@@ -22,7 +21,6 @@ specifiers:
   lunar-typescript: ^1.2.22
   naive-ui: ^2.30.6
   normalize.css: ^8.0.1
-  nprogress: ^0.2.0
   nzh: ^1.0.8
   postcss: ^8.4.14
   prettier: ^2.7.1
@@ -45,14 +43,12 @@ dependencies:
   lunar-typescript: 1.2.22
   naive-ui: 2.30.6_vue@3.2.37
   normalize.css: 8.0.1
-  nprogress: 0.2.0
   nzh: 1.0.8
   vue: 3.2.37
   vue-router: 4.0.16_vue@3.2.37
 
 devDependencies:
   '@types/node': 17.0.45
-  '@types/nprogress': 0.2.0
   '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
   '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
   '@vicons/carbon': 0.12.0
@@ -69,7 +65,7 @@ devDependencies:
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.11_prettier@2.7.1
   rollup-plugin-visualizer: 5.6.0
-  tailwindcss: 3.1.4
+  tailwindcss: 3.1.4_postcss@8.4.14
   typescript: 4.7.4
   unplugin-auto-import: 0.8.8_4jnm4urp6nwbe5o76bpn6kimyu
   unplugin-vue-components: 0.19.9_vite@2.9.12+vue@3.2.37
@@ -224,10 +220,6 @@ packages:
 
   /@types/node/17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
-
-  /@types/nprogress/0.2.0:
-    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
-    dev: true
 
   /@types/web-bluetooth/0.0.14:
     resolution: {integrity: sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==}
@@ -2049,10 +2041,6 @@ packages:
       path-key: 3.1.1
     dev: true
 
-  /nprogress/0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: false
-
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
     dependencies:
@@ -2647,10 +2635,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.1.4:
+  /tailwindcss/3.1.4_postcss@8.4.14:
     resolution: {integrity: sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

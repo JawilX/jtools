@@ -1,6 +1,6 @@
 import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import NProgress from 'nprogress'
+import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
 
 export const toolList: Array<RouteRecordRaw> = [
   {
@@ -119,13 +119,11 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
-  if (!NProgress.isStarted()) {
-    NProgress.start()
-  }
+  getDiscreteApi().loadingBar.start()
 })
 
 router.afterEach((to, from) => {
-  NProgress.done()
+  getDiscreteApi().loadingBar.finish()
   const toDepth = to.path === '/' ? 1 : to.path.split('/').length
   const fromDepth = from.path === '/' ? 1 : from.path.split('/').length
   to.meta.transition = from.meta.transition = toDepth > fromDepth ? 'slide-left' : 'slide-right'
