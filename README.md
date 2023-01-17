@@ -40,7 +40,7 @@
 ## 编码风格
 
 - 使用 Composition API 地 `<script setup> 语法`
-- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/), 单引号，无分号
+- [antfu/eslint-config](https://github.com/antfu/eslint-config), 单引号，无分号
 
 ## 开始
 

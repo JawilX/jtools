@@ -2,6 +2,6 @@
   <div class="flex min-h-screen flex-col">
     <BaseHeader />
 
-    <slot></slot>
+    <slot />
   </div>
 </template>

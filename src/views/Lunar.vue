@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Solar, Lunar } from 'lunar-typescript'
+import { Lunar, Solar } from 'lunar-typescript'
 import ArrowExportLtr20Filled from '@vicons/fluent/ArrowExportLtr20Filled'
 import ArrowExportRtl20Filled from '@vicons/fluent/ArrowExportRtl20Filled'
 import { useRouteQuery } from '@vueuse/router'
@@ -8,10 +8,10 @@ import dayjs from 'dayjs'
 const current = ref(Date.now())
 
 const queryDate = useRouteQuery<string>('date')
-if (queryDate.value) {
+if (queryDate.value)
   current.value = dayjs(queryDate.value, 'YYYY-MM-DD').valueOf()
-}
-watch(current, val => {
+
+watch(current, (val) => {
   queryDate.value = dayjs(val).format('YYYY-MM-DD')
 })
 
@@ -76,15 +76,21 @@ const l = computed(() => Lunar.fromDate(new Date(current.value)))
       </div>
       <div class="col-start-2 col-end-3 row-start-4 row-end-5 pl-4">
         <div>喜神</div>
-        <div class="text-gray-500">{{ l.getDayPositionXiDesc() }}</div>
+        <div class="text-gray-500">
+          {{ l.getDayPositionXiDesc() }}
+        </div>
       </div>
       <div class="col-start-3 col-end-4 row-start-4 row-end-5 pl-4">
         <div>福神</div>
-        <div class="text-gray-500">{{ l.getDayPositionFuDesc() }}</div>
+        <div class="text-gray-500">
+          {{ l.getDayPositionFuDesc() }}
+        </div>
       </div>
       <div class="col-start-4 col-end-5 row-start-4 row-end-5 pl-4">
         <div>财神</div>
-        <div class="text-gray-500">{{ l.getDayPositionCaiDesc() }}</div>
+        <div class="text-gray-500">
+          {{ l.getDayPositionCaiDesc() }}
+        </div>
       </div>
       <div class="col-start-2 col-end-5 row-start-5 row-end-6 pl-4">
         <span class="mr-2 rounded-xl bg-green-600 py-[2px] px-1 text-white">宜</span>

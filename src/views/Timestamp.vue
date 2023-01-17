@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { copyText } from '@/utils'
 import dayjs from 'dayjs'
+import { copyText } from '@/utils'
 
 const { timestamp, pause, resume } = useTimestamp({ controls: true })
 const isPause = ref(false)
@@ -8,7 +8,7 @@ const isPause = ref(false)
 const inputTimestamp = ref('')
 inputTimestamp.value = String(timestamp.value)
 const convertTimestamp = computed(() =>
-  dayjs(parseInt(inputTimestamp.value)).format('YYYY-MM-DD HH:mm:ss')
+  dayjs(parseInt(inputTimestamp.value)).format('YYYY-MM-DD HH:mm:ss'),
 )
 
 const inputDate = ref('')
@@ -18,16 +18,21 @@ const convertDate = computed(() => dayjs(inputDate.value).format('x'))
 const inputSecond = ref('')
 const convertSecond = computed(() => {
   const value = parseInt(inputSecond.value)
-  if (isNaN(value)) return ''
+  if (isNaN(value))
+    return ''
   let result = '结算结果：'
   const day = Math.floor(value / 86400)
   const hour = Math.floor((value % 86400) / 3600)
   const minute = Math.floor((value % 3600) / 60)
   const second = value % 60
-  if (day > 0) result += `${day}天 `
-  if (hour > 0) result += `${hour}小时 `
-  if (minute > 0) result += `${minute}分钟 `
-  if (second > 0) result += `${second}秒 `
+  if (day > 0)
+    result += `${day}天 `
+  if (hour > 0)
+    result += `${hour}小时 `
+  if (minute > 0)
+    result += `${minute}分钟 `
+  if (second > 0)
+    result += `${second}秒 `
   return result
 })
 </script>
@@ -38,18 +43,24 @@ const convertSecond = computed(() => {
       当前时间：
       <span class="inline-block w-40 text-xl">{{ timestamp }}</span>
       <span class="pr-6">毫秒</span>
-      <NButton v-if="!isPause" text type="warning" @click="pause(), (isPause = true)">暂停</NButton>
+      <NButton v-if="!isPause" text type="warning" @click="pause(), (isPause = true)">
+        暂停
+      </NButton>
       <NButton v-if="isPause" text type="primary" @click="resume(), (isPause = false)">
         启动
       </NButton>
-      <NButton text type="info" @click="copyText(timestamp)">复制</NButton>
+      <NButton text type="info" @click="copyText(timestamp)">
+        复制
+      </NButton>
     </NSpace>
 
     <BaseTitle class="my-6" />
     <NSpace align="center">
       <NInputGroup>
         <NInput v-model:value="inputTimestamp" class="flex-1" clearable placeholder="时间戳" />
-        <NInputGroupLabel class="">毫秒</NInputGroupLabel>
+        <NInputGroupLabel class="">
+          毫秒
+        </NInputGroupLabel>
       </NInputGroup>
       <span class="px-6">=></span>
       <NInputGroup>
@@ -83,9 +94,13 @@ const convertSecond = computed(() => {
     <BaseTitle class="!mt-12" text="秒转天、小时、分钟、秒" />
     <NInputGroup class="w-[231px]">
       <NInput v-model:value="inputSecond" clearable />
-      <NInputGroupLabel class="">秒</NInputGroupLabel>
+      <NInputGroupLabel class="">
+        秒
+      </NInputGroupLabel>
     </NInputGroup>
-    <div class="p-4">{{ convertSecond }}</div>
+    <div class="p-4">
+      {{ convertSecond }}
+    </div>
 
     <BaseTitle class="!mt-48" text="什么是Unix时间戳" />
     <div class="leading-6">

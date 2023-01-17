@@ -4,11 +4,11 @@ const info = computed(() => {
   const value = input.value
   return {
     char: value.match(/./g)?.length || 0,
-    chinese: value.match(/[\u4e00-\u9fa5]/g)?.length || 0,
+    chinese: value.match(/[\u4E00-\u9FA5]/g)?.length || 0,
     word: value.match(/[a-zA-Z]+/g)?.length || 0,
     letter: value.match(/[a-zA-Z]/g)?.length || 0,
     number: value.match(/\d/g)?.length || 0,
-    others: value.match(/[^\u4e00-\u9fa5\w]/g)?.length || 0,
+    others: value.match(/[^\u4E00-\u9FA5\w]/g)?.length || 0,
   }
 })
 </script>

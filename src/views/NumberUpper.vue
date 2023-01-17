@@ -18,7 +18,9 @@ const upper = computed(() => nzh.cn.toMoney(number.value ?? '', { outSymbol: fal
         <NInputGroupLabel>结果</NInputGroupLabel>
         <NInput v-model:value="upper" class="flex-1" />
       </NInputGroup>
-      <NButton @click="copyText(upper)">复制</NButton>
+      <NButton @click="copyText(upper)">
+        复制
+      </NButton>
     </div>
   </section>
 </template>

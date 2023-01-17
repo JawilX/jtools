@@ -114,7 +114,7 @@ const otherRoutes: RouteRecordRaw[] = [
 ]
 
 const setupRouterGuard = (router: Router) => {
-  router.beforeEach((to, from) => {
+  router.beforeEach((to) => {
     document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE
     getDiscreteApi().loadingBar.start()
   })

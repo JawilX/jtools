@@ -8,7 +8,7 @@ import LogoGithub from '@vicons/carbon/LogoGithub'
       <RouterLink class="cursor-pointer text-xl" to="/" title="JTools">
         <span>JTools</span>
       </RouterLink>
-      <span class="flex-1"></span>
+      <span class="flex-1" />
       <a
         class="cursor-pointer"
         href="https://github.com/JawilX/jtools"

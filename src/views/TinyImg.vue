@@ -5,7 +5,7 @@ import Add28Regular from '@vicons/fluent/Add28Regular'
 import Compressor from 'compressorjs'
 import { convertFileSize, downloadFile } from '@/utils/index'
 
-type TableItem = {
+interface TableItem {
   id: string
   name: string
   size: number
@@ -19,9 +19,9 @@ const tableList = reactive<TableItem[]>([])
 
 function handleBeforeUpload(options: { file: UploadFileInfo }) {
   const { file } = options
-  if (!/image/.test(String(file.type))) {
+  if (!/image/.test(String(file.type)))
     return Promise.reject(new Error('请上传图片文件'))
-  }
+
   return Promise.resolve(true)
 }
 
@@ -36,7 +36,7 @@ function handleChange(options: { file: UploadFileInfo }) {
     status: 'warning',
   })
   tableList.push(tableItem)
-  new Compressor(file.file as File, {
+  return new Compressor(file.file as File, {
     quality: 0.6,
     success(result: File) {
       tableItem.compressedFile = result
@@ -69,33 +69,57 @@ function handleRemove(index: number) {
         </NIcon>
         <NP>
           将文件拖到此处，或
-          <NText type="info">点击上传</NText>
+          <NText type="info">
+            点击上传
+          </NText>
         </NP>
       </NUploadDragger>
     </NUpload>
     <NP depth="3">
       *只能上传
-      <NText type="info">jpg</NText>
+      <NText type="info">
+        jpg
+      </NText>
       /
-      <NText type="info">png</NText>
+      <NText type="info">
+        png
+      </NText>
       /
-      <NText type="info">jpeg</NText>
+      <NText type="info">
+        jpeg
+      </NText>
       /
-      <NText type="info">gif</NText>
+      <NText type="info">
+        gif
+      </NText>
       文件，且不超过
-      <NText type="info">10MB</NText>
+      <NText type="info">
+        10MB
+      </NText>
     </NP>
 
     <div class="overflow-auto">
       <NTable v-if="tableList.length > 0" :bordered="false">
         <thead>
           <tr>
-            <th width="180">文件名</th>
-            <th width="100">压缩前</th>
-            <th width="100">压缩后</th>
-            <th width="100">压缩率</th>
-            <th width="100">状态</th>
-            <th width="120">操作</th>
+            <th width="180">
+              文件名
+            </th>
+            <th width="100">
+              压缩前
+            </th>
+            <th width="100">
+              压缩后
+            </th>
+            <th width="100">
+              压缩率
+            </th>
+            <th width="100">
+              状态
+            </th>
+            <th width="120">
+              操作
+            </th>
           </tr>
         </thead>
         <tbody>

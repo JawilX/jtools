@@ -2,7 +2,8 @@ import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
 
 export function toBase64(file?: Blob | null): Promise<string> {
   return new Promise((resolve, reject) => {
-    if (!file) return reject('')
+    if (!file)
+      return reject(new Error('no file'))
     const reader = new FileReader()
     reader.readAsDataURL(file)
     reader.onload = () => resolve(String(reader.result))

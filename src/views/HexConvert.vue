@@ -41,10 +41,16 @@ function convert(radix: number) {
     <NTable v-if="input" :bordered="false">
       <thead>
         <tr>
-          <th width="80">进制</th>
+          <th width="80">
+            进制
+          </th>
           <th>值</th>
-          <th width="140">备注</th>
-          <th width="80">操作</th>
+          <th width="140">
+            备注
+          </th>
+          <th width="80">
+            操作
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -55,7 +61,9 @@ function convert(radix: number) {
           </td>
           <td>{{ item.note }}</td>
           <td>
-            <NButton size="small" secondary type="info" @click="copyText(item.value)">复制</NButton>
+            <NButton size="small" secondary type="info" @click="copyText(item.value)">
+              复制
+            </NButton>
           </td>
         </tr>
       </tbody>

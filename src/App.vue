@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { zhCN, dateZhCN } from 'naive-ui'
+import { dateZhCN, zhCN } from 'naive-ui'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import { zhCN, dateZhCN } from 'naive-ui'
     <NMessageProvider>
       <BaseLayout>
         <RouterView v-slot="{ Component, route }">
-          <Transition :name="(route.meta.transition as string)">
+          <Transition :name="route.meta.transition as string">
             <Component
               :is="Component"
               :key="route.path"

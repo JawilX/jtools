@@ -1,64 +1,70 @@
 {
   "name": "jtools",
   "version": "0.0.0",
+  "packageManager": "pnpm@7.17.0",
   "author": "Jawil",
+  "engines": {
+    "node": ">=16.14.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "@comment preinstall": "https://github.com/npm/cli/issues/2883",
-    "preinstall": "npx -y only-allow pnpm",
-    "prepare": "husky install"
-  },
-  "engines": {
-    "node": "14.x || 16.x"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "*.{ts,js,vue}": [
-      "eslint"
-    ]
+    "prepare": "simple-git-hooks",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@vueuse/core": "^8.7.5",
-    "@vueuse/router": "^8.7.5",
+    "@vueuse/core": "^8.9.4",
+    "@vueuse/router": "^8.9.4",
     "compressorjs": "^1.1.1",
-    "dayjs": "^1.11.3",
-    "lunar-typescript": "^1.2.22",
-    "naive-ui": "^2.30.6",
+    "dayjs": "^1.11.7",
+    "lunar-typescript": "^1.2.27",
+    "naive-ui": "^2.34.3",
     "normalize.css": "^8.0.1",
     "nzh": "^1.0.8",
-    "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.34.1",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@types/node": "^17.0.45",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
     "@vicons/carbon": "^0.12.0",
     "@vicons/fluent": "^0.12.0",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.7.1",
-    "husky": "^7.0.4",
+    "@vitejs/plugin-vue": "^2.3.4",
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.32.0",
     "lint-staged": "^12.5.0",
-    "postcss": "^8.4.14",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.11",
-    "rollup-plugin-visualizer": "^5.6.0",
-    "tailwindcss": "^3.1.4",
-    "typescript": "^4.7.4",
+    "postcss": "^8.4.21",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "simple-git-hooks": "^2.8.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.4",
     "unplugin-auto-import": "^0.8.8",
     "unplugin-vue-components": "^0.19.9",
-    "vite": "^2.9.12",
+    "vite": "^2.9.15",
     "vue-tsc": "^0.29.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged",
+    "commit-msg": "pnpm exec commitlint --edit \"${1}\""
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md,jsx,tsx,vue,yml,yaml}": [
+      "eslint --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@antfu",
+    "ignorePatterns": [
+      "**/*.cy.js"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }

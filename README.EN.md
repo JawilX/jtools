@@ -36,7 +36,7 @@
 ## Coding Style
 
 - Use Composition API with `<script setup>` syntax
-- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/), single quotes, no semi
+- [antfu/eslint-config](https://github.com/antfu/eslint-config), single quotes, no semi
 
 ## Getting Started
 

@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import type { UploadFileInfo } from 'naive-ui'
-
-import { toBase64, copyText } from '@/utils/index'
 import { useMessage } from 'naive-ui'
+import { copyText, toBase64 } from '@/utils/index'
 
 const message = useMessage()
 
@@ -14,7 +13,8 @@ function onEncodeString() {
 function onDecodeString() {
   try {
     source.value = window.atob(encode.value)
-  } catch (e) {
+  }
+  catch (e) {
     message.error('解码失败，请输入正确的格式')
   }
 }
@@ -53,8 +53,12 @@ function clear() {
           placeholder="请输入需要转码的字符串"
         />
         <NSpace class="py-2" justify="center">
-          <NButton secondary type="info" @click="onEncodeString">编码</NButton>
-          <NButton secondary type="info" @click="onDecodeString">解码</NButton>
+          <NButton secondary type="info" @click="onEncodeString">
+            编码
+          </NButton>
+          <NButton secondary type="info" @click="onDecodeString">
+            解码
+          </NButton>
         </NSpace>
         <NInput
           v-model:value="encode"
@@ -70,13 +74,21 @@ function clear() {
         </NUpload>
         <div class="flex py-2">
           <NRadioGroup v-model:value="fileEncodeFormat">
-            <NRadioButton value="dataUrl">data url</NRadioButton>
-            <NRadioButton value="css">css</NRadioButton>
-            <NRadioButton value="html">html</NRadioButton>
+            <NRadioButton value="dataUrl">
+              data url
+            </NRadioButton>
+            <NRadioButton value="css">
+              css
+            </NRadioButton>
+            <NRadioButton value="html">
+              html
+            </NRadioButton>
           </NRadioGroup>
-          <div class="flex-1"></div>
+          <div class="flex-1" />
           <NSpace>
-            <NButton secondary type="info" @click="clear()">清空</NButton>
+            <NButton secondary type="info" @click="clear()">
+              清空
+            </NButton>
             <NButton secondary type="info" @click="copyText(fileEncode[fileEncodeFormat])">
               复制
             </NButton>
