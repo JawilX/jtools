@@ -1,7 +1,6 @@
 import type { RouteRecordRaw, Router } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { App } from 'vue'
-import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
 
 export const toolList: RouteRecordRaw[] = [
   {

@@ -1,5 +1,3 @@
-import { getDiscreteApi } from '@/composable/useNaiveDiscreteApi'
-
 export function toBase64(file?: Blob | null): Promise<string> {
   return new Promise((resolve, reject) => {
     if (!file)
