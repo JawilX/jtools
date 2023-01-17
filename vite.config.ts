@@ -39,22 +39,7 @@ export default defineConfig(({ mode }) => {
     // 别名设置
     resolve: {
       alias: {
-        '@': resolve(__dirname, './src'),
-      },
-    },
-    server: {
-      host: true,
-      port: 3000,
-      open: true,
-      proxy: {},
-    },
-    build: {
-      target: 'esnext',
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-        },
+        '@/': `${resolve(__dirname, 'src')}/`,
       },
     },
   }
