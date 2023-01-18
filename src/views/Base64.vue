@@ -1,116 +1,79 @@
 <script setup lang="ts">
-import type { UploadFileInfo } from 'naive-ui'
-import { useMessage } from 'naive-ui'
-import { copyText, toBase64 } from '@/utils/index'
+import { copyText } from '@/utils'
+import { Format, Tab, useBase64Store } from '@/store/useBase64Store'
 
-const message = useMessage()
-
-const source = ref('')
-const encode = ref('')
-function onEncodeString() {
-  encode.value = window.btoa(source.value)
-}
-function onDecodeString() {
-  try {
-    source.value = window.atob(encode.value)
-  }
-  catch (e) {
-    message.error('解码失败，请输入正确的格式')
-  }
-}
-
-const fileEncode = reactive({
-  dataUrl: '',
-  css: '',
-  html: '',
-})
-const fileList = ref<UploadFileInfo[]>([])
-async function handleFileChange(options: { file: UploadFileInfo; fileList: UploadFileInfo[] }) {
-  fileList.value = options.fileList.slice(-1)
-
-  fileEncode.dataUrl = await toBase64(options.file.file)
-  fileEncode.css = `div.image {\n\twidth: 212px;\n\theight: 210px;\n\tbackground-image: url(${fileEncode.dataUrl})`
-  fileEncode.html = `<img width="212" height="210" src="${fileEncode.dataUrl}">`
-}
-
-type Format = 'dataUrl' | 'css' | 'html'
-const fileEncodeFormat = ref<Format>('dataUrl')
-
-function clear() {
-  fileEncode.dataUrl = fileEncode.css = fileEncode.html = ''
-  fileList.value = []
-}
+const base64Store = useBase64Store()
 </script>
 
 <template>
   <section>
-    <NTabs type="segment">
-      <NTabPane name="string" tab="字符 base64">
+    <NTabs v-model:value="base64Store.tab" type="segment">
+      <NTabPane :name="Tab.STRING" tab="字符 base64">
         <NInput
-          v-model:value="source"
+          v-model:value="base64Store.source"
           type="textarea"
           :rows="9"
           placeholder="请输入需要转码的字符串"
         />
         <NSpace class="py-2" justify="center">
-          <NButton secondary type="info" @click="onEncodeString">
+          <NButton secondary type="info" @click="base64Store.onEncodeString">
             编码
           </NButton>
-          <NButton secondary type="info" @click="onDecodeString">
+          <NButton secondary type="info" @click="base64Store.onDecodeString">
             解码
           </NButton>
         </NSpace>
         <NInput
-          v-model:value="encode"
+          v-model:value="base64Store.encode"
           type="textarea"
           :rows="9"
           placeholder="请输入需要解码的字符串"
         />
       </NTabPane>
 
-      <NTabPane name="file" tab="文件 base64">
-        <NUpload :file-list="fileList" :default-upload="false" @change="handleFileChange">
+      <NTabPane :name="Tab.FILE" tab="文件 base64">
+        <NUpload :file-list="base64Store.fileList" :default-upload="false" @change="base64Store.handleFileChange">
           <NButton>选择文件</NButton>
         </NUpload>
         <div class="flex py-2">
-          <NRadioGroup v-model:value="fileEncodeFormat">
-            <NRadioButton value="dataUrl">
+          <NRadioGroup v-model:value="base64Store.fileEncodeFormat">
+            <NRadioButton :value="Format.DATA_URL">
               data url
             </NRadioButton>
-            <NRadioButton value="css">
+            <NRadioButton :value="Format.CSS">
               css
             </NRadioButton>
-            <NRadioButton value="html">
+            <NRadioButton :value="Format.HTML">
               html
             </NRadioButton>
           </NRadioGroup>
           <div class="flex-1" />
           <NSpace>
-            <NButton secondary type="info" @click="clear()">
+            <NButton secondary type="info" @click="base64Store.clear">
               清空
             </NButton>
-            <NButton secondary type="info" @click="copyText(fileEncode[fileEncodeFormat])">
+            <NButton secondary type="info" @click="copyText(base64Store.fileEncode[base64Store.fileEncodeFormat])">
               复制
             </NButton>
           </NSpace>
         </div>
         <NInput
-          v-show="fileEncodeFormat === 'dataUrl'"
-          v-model:value="fileEncode.dataUrl"
+          v-show="base64Store.fileEncodeFormat === Format.DATA_URL"
+          v-model:value="base64Store.fileEncode.dataUrl"
           type="textarea"
           :rows="16"
           placeholder=""
         />
         <NInput
-          v-show="fileEncodeFormat === 'css'"
-          v-model:value="fileEncode.css"
+          v-show="base64Store.fileEncodeFormat === Format.CSS"
+          v-model:value="base64Store.fileEncode.css"
           type="textarea"
           :rows="16"
           placeholder=""
         />
         <NInput
-          v-show="fileEncodeFormat === 'html'"
-          v-model:value="fileEncode.html"
+          v-show="base64Store.fileEncodeFormat === Format.HTML"
+          v-model:value="base64Store.fileEncode.html"
           type="textarea"
           :rows="16"
           placeholder=""

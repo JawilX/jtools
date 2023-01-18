@@ -1,5 +1,6 @@
+import { createPinia } from 'pinia'
 import App from './App.vue'
-import { setupRouter } from '@/router/index'
+import { setupRouter } from '@/router'
 import '@/plugins/day'
 
 import './assets/styles/index.css'
@@ -8,6 +9,8 @@ import 'normalize.css'
 
 async function setupApp() {
   const app = createApp(App)
+  const pinia = createPinia()
+  app.use(pinia)
   await setupRouter(app)
   resolveNaiveAndTailwindConflict()
   app.mount('#app')

@@ -2,6 +2,8 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const Format: typeof import('./store/useBase64Store')['Format']
+  const Tab: typeof import('./store/useBase64Store')['Tab']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -113,6 +115,7 @@ declare global {
   const useAsyncState: typeof import('@vueuse/core')['useAsyncState']
   const useAttrs: typeof import('vue')['useAttrs']
   const useBase64: typeof import('@vueuse/core')['useBase64']
+  const useBase64Store: typeof import('./store/useBase64Store')['useBase64Store']
   const useBattery: typeof import('@vueuse/core')['useBattery']
   const useBluetooth: typeof import('@vueuse/core')['useBluetooth']
   const useBreakpoints: typeof import('@vueuse/core')['useBreakpoints']
