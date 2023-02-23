@@ -7,7 +7,7 @@ import { dateZhCN, zhCN } from 'naive-ui'
     <NMessageProvider>
       <BaseLayout>
         <RouterView v-slot="{ Component, route }">
-          <Transition :name="route.meta.transition as string">
+          <Transition :name="route.meta.transition">
             <Component
               :is="Component"
               :key="route.path"
