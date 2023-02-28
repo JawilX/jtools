@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import nzh from 'nzh'
-import type { Ref } from 'vue'
 import { copyText } from '@/utils'
 
-const number: Ref<number | null> = ref(null)
+const number = ref<number | null>(null)
 const upper = computed(() => nzh.cn.toMoney(number.value ?? '', { outSymbol: false }))
 </script>
 
