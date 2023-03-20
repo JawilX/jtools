@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+import { URL, fileURLToPath } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
     // 别名设置
     resolve: {
       alias: {
-        '@/': `${resolve(__dirname, 'src')}/`,
+        '@': fileURLToPath((new URL('./src', import.meta.url))),
       },
     },
   }
