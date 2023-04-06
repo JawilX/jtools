@@ -16,6 +16,6 @@ git checkout -b gh-pages
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:JawilX/jtools.git gh-pages
+git push -f https://github.com/JawilX/jtools.git gh-pages
 
 cd -
