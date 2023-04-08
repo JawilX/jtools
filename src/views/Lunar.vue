@@ -15,10 +15,10 @@ watch(current, (val) => {
   queryDate.value = dayjs(val).format('YYYY-MM-DD')
 })
 
-const add = () => {
+function add() {
   current.value = current.value + 86400000
 }
-const sub = () => {
+function sub() {
   current.value = current.value - 86400000
 }
 

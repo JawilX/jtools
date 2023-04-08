@@ -8,7 +8,7 @@ const discreteConfigure = computed<ConfigProviderProps>(() => ({
   theme: lightTheme,
 }))
 
-export const getDiscreteApi = () => {
+export function getDiscreteApi() {
   if (!discreteApi) {
     discreteApi = createDiscreteApi(['message', 'loadingBar'], {
       configProviderProps: discreteConfigure,

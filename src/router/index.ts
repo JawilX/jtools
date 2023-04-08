@@ -112,7 +112,7 @@ const otherRoutes: RouteRecordRaw[] = [
   },
 ]
 
-const setupRouterGuard = (router: Router) => {
+function setupRouterGuard(router: Router) {
   router.beforeEach((to) => {
     document.title = to.meta.title || import.meta.env.VITE_APP_TITLE
     getDiscreteApi().loadingBar.start()
@@ -126,7 +126,7 @@ const setupRouterGuard = (router: Router) => {
   })
 }
 
-export const setupRouter = async (app: App) => {
+export async function setupRouter(app: App) {
   const router = createRouter({
     history: createWebHashHistory(import.meta.env.VITE_BASE),
     routes: [...routes, ...otherRoutes],

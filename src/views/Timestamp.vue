@@ -65,7 +65,6 @@ const convertSecond = computed(() => {
       <span class="px-6">=></span>
       <NInputGroup>
         <NInput
-          ref="convertTimestampRef"
           v-model:value="convertTimestamp"
           class="flex-1"
           placeholder="时间"
