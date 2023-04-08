@@ -1,7 +1,4 @@
-import { reactive, ref } from 'vue'
-import { defineStore } from 'pinia'
 import type { UploadFileInfo } from 'naive-ui'
-import { getDiscreteApi } from '@/composables/useNaiveDiscreteApi'
 import { toBase64 } from '@/utils'
 
 export enum Tab {
