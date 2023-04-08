@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { copyText } from '@/utils'
-import { Format, Tab, useBase64Store } from '@/store/useBase64Store'
+import { Format, Tab, useBase64Store } from '@/stores/useBase64Store'
 
 const base64Store = useBase64Store()
 </script>
