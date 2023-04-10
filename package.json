@@ -10,9 +10,9 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "prepare": "simple-git-hooks",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
     "@vueuse/core": "^9.13.0",
