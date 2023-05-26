@@ -69,8 +69,8 @@ pnpm dev
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Acknowledgments
 
-- [tools.fun](https://tools.fun/)
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)

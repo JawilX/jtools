@@ -73,8 +73,8 @@ pnpm dev
 
 ## 许可证
 
-在 MIT 许可证下发布，更多信息见`LICENSE.txt`。
+在 MIT 许可证下发布，更多信息见`LICENSE`。
 
 ## 感谢
 
-- [tools.fun](https://tools.fun/)
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
