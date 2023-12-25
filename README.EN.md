@@ -16,7 +16,7 @@
 
 ## Features
 
-- ⚡️ [Vue 3](https://vuejs.org/), [Vite 2](https://vite.net/), [pnpm](https://pnpm.js.org/) - born with fastness
+- ⚡️ [Vue 3](https://vuejs.org/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.js.org/) - born with fastness
 - 🦾 [TypeScript](https://www.typescriptlang.org/), of course
 - 🔥 Use the `new <script setup> syntax`
 

@@ -16,7 +16,7 @@
 
 ## 特性
 
-- ⚡️ [Vue 3](https://vuejs.org/), [Vite 2](https://vite.net/), [pnpm](https://pnpm.js.org/) - 就是快！
+- ⚡️ [Vue 3](https://vuejs.org/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.js.org/) - 就是快！
 - 🦾 [TypeScript](https://www.typescriptlang.org/), 当然
 - 🔥 使用 `新的 <script setup> 语法`
 
