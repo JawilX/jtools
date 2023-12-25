@@ -40,7 +40,7 @@ export const useBase64Store = defineStore('base64', () => {
     }
   }
 
-  async function handleFileChange(options: { file: UploadFileInfo; fileList: UploadFileInfo[] }) {
+  async function handleFileChange(options: { file: UploadFileInfo, fileList: UploadFileInfo[] }) {
     fileList.value = options.fileList.slice(-1)
 
     fileEncode.dataUrl = await toBase64(options.file.file)

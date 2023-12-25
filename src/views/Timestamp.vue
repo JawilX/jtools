@@ -8,7 +8,7 @@ const isPause = ref(false)
 const inputTimestamp = ref('')
 inputTimestamp.value = String(timestamp.value)
 const convertTimestamp = computed(() =>
-  dayjs(parseInt(inputTimestamp.value)).format('YYYY-MM-DD HH:mm:ss'),
+  dayjs(Number.parseInt(inputTimestamp.value)).format('YYYY-MM-DD HH:mm:ss'),
 )
 
 const inputDate = ref('')
@@ -17,8 +17,8 @@ const convertDate = computed(() => dayjs(inputDate.value).format('x'))
 
 const inputSecond = ref('')
 const convertSecond = computed(() => {
-  const value = parseInt(inputSecond.value)
-  if (isNaN(value))
+  const value = Number.parseInt(inputSecond.value)
+  if (Number.isNaN(value))
     return ''
   let result = '结算结果：'
   const day = Math.floor(value / 86400)

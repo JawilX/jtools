@@ -26,7 +26,7 @@ const convertValue = computed(() => {
   ]
 })
 function convert(radix: number) {
-  return parseInt(input.value, hex.value).toString(radix)
+  return Number.parseInt(input.value, hex.value).toString(radix)
 }
 </script>
 

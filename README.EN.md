@@ -23,7 +23,7 @@
 ## UI Frameworks
 
 - [NaiveUI](https://naiveui.com/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
 
 ## Plugins
 

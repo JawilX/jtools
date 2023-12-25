@@ -23,7 +23,7 @@
 ## UI 框架
 
 - [NaiveUI](https://naiveui.com/)
-- [TailwindCSS](https://tailwindcss.com/)
+- [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 
 ## Icons
 

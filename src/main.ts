@@ -2,9 +2,10 @@ import App from './App.vue'
 import { setupRouter } from '@/router'
 import '@/plugins/day'
 
+import '@unocss/reset/tailwind.css'
+import 'uno.css'
 import './assets/styles/index.css'
 import './assets/styles/naive.css'
-import 'normalize.css'
 
 async function setupApp() {
   const app = createApp(App)

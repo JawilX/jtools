@@ -1,21 +1,30 @@
-import { URL, fileURLToPath } from 'node:url'
+import path from 'node:path'
+import process from 'node:process'
 import { defineConfig, loadEnv } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { visualizer } from 'rollup-plugin-visualizer'
+import UnoCSS from 'unocss/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // env 环境变量
-  const viteEnv = loadEnv(mode, process.cwd())
+  // Load env file based on `mode` in the current working directory.
+  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
+  const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    base: viteEnv.VITE_BASE,
+    base: env.VITE_BASE,
     define: {
-      // disable Options API support
+    // disable Options API support
       __VUE_OPTIONS_API__: false,
+    },
+    // 别名设置
+    resolve: {
+      alias: {
+        '@/': `${path.resolve(__dirname, 'src')}/`,
+      },
     },
     plugins: [
       Vue(),
@@ -35,12 +44,10 @@ export default defineConfig(({ mode }) => {
       }),
 
       visualizer(),
+
+      // https://github.com/antfu/unocss
+      // see uno.config.ts for config
+      UnoCSS(),
     ],
-    // 别名设置
-    resolve: {
-      alias: {
-        '@': fileURLToPath((new URL('./src', import.meta.url))),
-      },
-    },
   }
 })

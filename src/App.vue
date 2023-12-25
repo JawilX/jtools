@@ -11,7 +11,7 @@ import { dateZhCN, zhCN } from 'naive-ui'
             <Component
               :is="Component"
               :key="route.path"
-              class="absolute top-12 left-1/2 w-full max-w-3xl flex-1 -translate-x-1/2 py-6 px-4"
+              class="absolute left-1/2 top-12 max-w-3xl w-full flex-1 px-4 py-6 -translate-x-1/2"
             />
           </Transition>
         </RouterView>
@@ -22,8 +22,8 @@ import { dateZhCN, zhCN } from 'naive-ui'
 
 <style>
 body {
-  font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC', 'Helvetica Neue',
-    'Helvetica', 'Arial', sans-serif;
+  font-family: 'SF Pro SC', 'SF Pro Text', 'SF Pro Icons', 'PingFang SC',
+    'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 
 .slide-left-enter-active,

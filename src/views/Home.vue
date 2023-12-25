@@ -10,7 +10,7 @@ const tools = toolList.filter(item => !item.meta?.hide)
       v-for="(item, index) in tools"
       :key="index"
       :to="item.path"
-      class="flex h-20 items-center rounded border border-solid border-black/5 p-5 text-lg shadow shadow-slate-200 transition-all duration-200 hover:border-black/10 hover:shadow-lg"
+      class="h-20 flex items-center border border-black/5 rounded border-solid p-5 text-lg shadow shadow-slate-200 transition-all duration-200 hover:border-black/10 hover:shadow-lg"
     >
       {{ item.meta?.title }}
     </RouterLink>

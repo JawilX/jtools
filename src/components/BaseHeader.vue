@@ -3,8 +3,8 @@ import LogoGithub from '@vicons/carbon/LogoGithub'
 </script>
 
 <template>
-  <div class="w-full shadow-sm shadow-slate-200">
-    <div class="m-auto flex h-12 max-w-5xl items-center px-4">
+  <div class="w-full shadow-slate-200 shadow-sm">
+    <div class="m-auto h-12 max-w-5xl flex items-center px-4">
       <RouterLink class="cursor-pointer text-xl" to="/" title="JTools">
         <span>JTools</span>
       </RouterLink>
